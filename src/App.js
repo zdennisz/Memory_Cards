@@ -8,7 +8,10 @@ var cards = [];
 export default function App() {
   return (
     <div className="App">
-      <CardNavigator cards={cards} />
+      <div className="Main_Container">
+        <label id="appName">Memory Cards</label>
+        <CardNavigator cards={cards} />
+      </div>
     </div>
   );
 }

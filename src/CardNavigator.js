@@ -87,59 +87,60 @@ export const CardNavigator = props => {
   };
   if (viewCards === 1) {
     return (
-      <div>
-        <form className="Container-Form" onSubmit={handleAddItem}>
-          <label>
-            Question:
+      <div className="Content_Container">
+        <div className="Form_Container">
+          <form className="Input_Control" onSubmit={handleAddItem}>
+            <label>Question:</label>
             <input
               type="text"
               value={question}
               onChange={questionHandleChange}
             />
-          </label>
-          <label>
-            Answer:
+
+            <label>Answer:</label>
             <input type="text" value={answer} onChange={answerHandleChange} />
-          </label>
-          <input type="submit" value="Add" />
-          <Button variant="primary" onClick={handleCancelEditMode}>
-            X
-          </Button>
-        </form>
+
+            <input type="submit" value="Add" />
+          </form>
+        </div>
+        <Button variant="primary" onClick={handleCancelEditMode}>
+          X
+        </Button>
       </div>
     );
   } else {
     return (
-      <div className="Container">
-        <label>Memory Cards</label>
-        <Button variant="primary" onClick={handleClickAdd}>
-          Add Card
-        </Button>
-        <Button variant="primary" onClick={handleClickDeleteLast}>
-          Delete Last
-        </Button>
-        <Button variant="primary" onClick={handleClickDeleteAll}>
-          Delete All
-        </Button>
-        <br />
-        <input
-          type="text"
-          value={index}
-          id="indexToDelete"
-          placeholder="Card to Delete"
-          onChange={indexHandleChange}
-        />
-        <Button
-          onClick={handleClickDeleteCertain}
-          hint="Enter Card to Delete"
-          size="small"
-          color="primary"
-        >
-          Delete
-        </Button>
-
-        <div id="list">
-          <MemoryCardList cards={cards} />
+      <div className="Content_Container">
+        <div className="Show_Container">
+          <div classname="Button_Control">
+            <Button variant="primary" onClick={handleClickAdd}>
+              Add Card
+            </Button>
+            <Button variant="primary" onClick={handleClickDeleteLast}>
+              Delete Last
+            </Button>
+            <Button variant="primary" onClick={handleClickDeleteAll}>
+              Delete All
+            </Button>
+            <input
+              type="text"
+              value={index}
+              id="indexToDelete"
+              placeholder="Card to Delete"
+              onChange={indexHandleChange}
+            />
+            <Button
+              onClick={handleClickDeleteCertain}
+              hint="Enter Card to Delete"
+              size="small"
+              color="primary"
+            >
+              Delete
+            </Button>
+          </div>
+          <div id="list">
+            <MemoryCardList cards={cards} />
+          </div>
         </div>
       </div>
     );
