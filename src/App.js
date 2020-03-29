@@ -9,7 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import { useState } from "react";
 
 function MemoryCard(props) {
-  let [sideOfCard, setSideOfCard] = useState(0);
+  const [sideOfCard, setSideOfCard] = useState(0);
   //0 is the side of the question and 1 of the answer
   const handlecardClick = () => {
     if (sideOfCard === 0) {
@@ -65,10 +65,10 @@ function CardList(props) {
 
 function MemoryCards(props) {
   let [cards, setCount] = useState(0); //controls the main data structure
-  let [index, setIndex] = useState(0); //controls  getting index from input
-  let [question, setQuestion] = useState(""); //controls the get question
-  let [answer, setAnswer] = useState(""); //controls the get answer
-  let [viewCards, setView] = useState(0); //controls the  view state
+  const [index, setIndex] = useState(0); //controls  getting index from input
+  const [question, setQuestion] = useState(""); //controls the get question
+  const [answer, setAnswer] = useState(""); //controls the get answer
+  const [viewCards, setView] = useState(0); //controls the  view state
   cards = props.cards;
 
   const questionHandleChange = event => {
