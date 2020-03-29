@@ -1,0 +1,27 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+ul {
+  list-style-type: none;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+}
+
+.listItem {
+  flex-basis: 1;
+}
+
+.cardProperties {
+  width: 345;
+  height: 140;
+}
+.Container-Form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 200px;
+}
