@@ -87,23 +87,37 @@ export const CardNavigator = props => {
   };
   if (viewCards === 1) {
     return (
-      <div className="Content_Container">
-        <div className="Form_Container">
+      <div className="Content_Container ">
+        <div className="Form_Container addCardBorder">
           <form className="Input_Control" onSubmit={handleAddItem}>
             <label>Question:</label>
             <input
+              className="cardinfo"
               type="text"
               value={question}
               onChange={questionHandleChange}
             />
 
             <label>Answer:</label>
-            <input type="text" value={answer} onChange={answerHandleChange} />
+            <input
+              className="cardinfo"
+              type="text"
+              value={answer}
+              onChange={answerHandleChange}
+            />
 
-            <input type="submit" value="Add" />
+            <input
+              className="ButtonStyle addButton"
+              type="submit"
+              value="Add"
+            />
           </form>
         </div>
-        <Button variant="primary" onClick={handleCancelEditMode}>
+        <Button
+          className="x_Btn ButtonStyle"
+          variant="primary"
+          onClick={handleCancelEditMode}
+        >
           X
         </Button>
       </div>
@@ -113,13 +127,25 @@ export const CardNavigator = props => {
       <div className="Content_Container">
         <div className="Show_Container">
           <div classname="Button_Control">
-            <Button variant="primary" onClick={handleClickAdd}>
+            <Button
+              className="ButtonStyle"
+              variant="primary"
+              onClick={handleClickAdd}
+            >
               Add Card
             </Button>
-            <Button variant="primary" onClick={handleClickDeleteLast}>
+            <Button
+              className="ButtonStyle"
+              variant="primary"
+              onClick={handleClickDeleteLast}
+            >
               Delete Last
             </Button>
-            <Button variant="primary" onClick={handleClickDeleteAll}>
+            <Button
+              className="ButtonStyle"
+              variant="primary"
+              onClick={handleClickDeleteAll}
+            >
               Delete All
             </Button>
             <input
@@ -130,6 +156,7 @@ export const CardNavigator = props => {
               onChange={indexHandleChange}
             />
             <Button
+              className="ButtonStyle"
               onClick={handleClickDeleteCertain}
               hint="Enter Card to Delete"
               size="small"
