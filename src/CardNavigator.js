@@ -88,30 +88,34 @@ export const CardNavigator = props => {
   if (viewCards === 1) {
     return (
       <div className="Content_Container ">
-        <div className="Form_Container addCardBorder">
-          <form className="Input_Control" onSubmit={handleAddItem}>
-            <label>Question:</label>
-            <input
-              className="cardinfo"
-              type="text"
-              value={question}
-              onChange={questionHandleChange}
-            />
+        <div className="dullbackground">
+          <div className="gradient">
+            <div className="Form_Container">
+              <form className="Input_Control" onSubmit={handleAddItem}>
+                <label className="labelPos">Question:</label>
+                <input
+                  className="cardinfo"
+                  type="text"
+                  value={question}
+                  onChange={questionHandleChange}
+                />
 
-            <label>Answer:</label>
-            <input
-              className="cardinfo"
-              type="text"
-              value={answer}
-              onChange={answerHandleChange}
-            />
+                <label className="labelPos">Answer:</label>
+                <input
+                  className="cardinfo"
+                  type="text"
+                  value={answer}
+                  onChange={answerHandleChange}
+                />
 
-            <input
-              className="ButtonStyle addButton"
-              type="submit"
-              value="Add"
-            />
-          </form>
+                <input
+                  className="ButtonStyle addButton"
+                  type="submit"
+                  value="Add"
+                />
+              </form>
+            </div>
+          </div>
         </div>
         <Button
           className="x_Btn ButtonStyle"
