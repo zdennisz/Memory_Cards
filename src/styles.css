@@ -53,9 +53,19 @@ ul {
 }
 
 #appName {
-  margin-top: 25%;
-  font-family: Candara;
-  font-size: 50px;
+  margin-top: 12%;
+  font-family: Kameron;
+  font-size: 72px;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 217, 214, 1) 49%,
+    rgba(255, 46, 99, 1) 72%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2%;
+  filter: drop-shadow(2px 2px rgb(254, 254, 254));
 }
 
 .Show_Container {
