@@ -8,6 +8,7 @@ export const CardNavigator = props => {
   const [question, setQuestion] = useState(""); //controls the get question
   const [answer, setAnswer] = useState(""); //controls the get answer
   const [viewCards, setView] = useState(0); //controls the  view state
+  const [openMenu, setOpenMenu] = useState(1);
   cards = props.cards;
 
   const questionHandleChange = event => {
@@ -82,6 +83,14 @@ export const CardNavigator = props => {
     }
   };
 
+  const handleOpenMenu = () => {
+    if (openMenu === 0) {
+      setOpenMenu(1);
+    } else {
+      setOpenMenu(0);
+    }
+  };
+
   const indexHandleChange = event => {
     setIndex(event.target.value);
   };
@@ -140,36 +149,54 @@ export const CardNavigator = props => {
             </Button>
             <Button
               className="ButtonStyle deleteCardBtn"
-              variant="primary"
-              onClick={handleClickDeleteLast}
-            >
-              Delete Last
-            </Button>
-            <Button
-              className="ButtonStyle deleteCardBtn"
-              variant="primary"
-              onClick={handleClickDeleteAll}
-            >
-              Delete All
-            </Button>
-
-            <input
-              type="text"
-              value={index}
-              id="indexToDelete"
-              placeholder="Card to Delete"
-              onChange={indexHandleChange}
-            />
-            <Button
-              className="ButtonStyle deleteCardBtn"
-              onClick={handleClickDeleteCertain}
               hint="Enter Card to Delete"
+              onClick={handleOpenMenu}
               size="small"
               color="primary"
             >
               Delete
             </Button>
+            <div
+              className={
+                openMenu
+                  ? "FloatingMenu closedFloatingMenu"
+                  : "FloatingMenu openFloatingMenu"
+              }
+            >
+              <Button
+                className="ButtonStyle deleteCardBtn"
+                variant="primary"
+                onClick={handleClickDeleteLast}
+              >
+                Delete Last
+              </Button>
+              <Button
+                className="ButtonStyle deleteCardBtn"
+                variant="primary"
+                onClick={handleClickDeleteAll}
+              >
+                Delete All
+              </Button>
+
+              <input
+                type="text"
+                value={index}
+                id="indexToDelete"
+                placeholder="Card to Delete"
+                onChange={indexHandleChange}
+              />
+              <Button
+                className="ButtonStyle deleteCardBtn"
+                onClick={handleClickDeleteCertain}
+                hint="Enter Card to Delete"
+                size="small"
+                color="primary"
+              >
+                Delete
+              </Button>
+            </div>
           </div>
+
           <div id="list">
             <MemoryCardList cards={cards} />
           </div>

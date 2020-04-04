@@ -118,6 +118,7 @@ input {
 
 #indexToDelete {
   width: 197px;
+  height: 30px;
 }
 
 .addButton {
@@ -172,8 +173,20 @@ input {
   font-size: 20px;
 }
 
-fieldset {
+.FloatingMenu {
+  position: absolute;
+  left: 220px;
+  bottom: 1%;
   display: grid;
-  border-color: rgb(234, 234, 234);
-  grid-gap: 1px;
+  grid-gap: 10px;
+}
+
+.openFloatingMenu {
+  opacity: 1;
+  z-index: 1000;
+}
+
+.closedFloatingMenu {
+  opacity: 0;
+  z-index: -1000;
 }
