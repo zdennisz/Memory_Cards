@@ -119,6 +119,7 @@ input {
 #indexToDelete {
   width: 197px;
   height: 30px;
+  margin-right: 10px;
 }
 
 .addButton {
@@ -165,6 +166,7 @@ input {
 }
 
 .deleteCardBtn {
+  margin-right: 15px;
   height: 50px;
   width: 200px;
   background-color: rgb(255, 46, 99);
@@ -176,9 +178,9 @@ input {
 .FloatingMenu {
   position: absolute;
   left: 220px;
-  bottom: 1%;
-  display: grid;
-  grid-gap: 10px;
+  bottom: 0px;
+  display: flex;
+  align-items: baseline;
 }
 
 .openFloatingMenu {
