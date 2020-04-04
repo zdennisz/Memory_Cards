@@ -60,7 +60,7 @@ export const CardNavigator = props => {
   };
   const handleClickDeleteCertain = () => {
     let updateIndex = false;
-    if (index > cards.length || index === 0) {
+    if (index > cards.length || index === 0 || typeof index !== "number") {
       alert("There are no cards under that Id");
     } else {
       let indexToDel = index - 1;
@@ -88,8 +88,8 @@ export const CardNavigator = props => {
   if (viewCards === 1) {
     return (
       <div className="Content_Container ">
-        <div className="dullbackground">
-          <div className="gradient">
+        <div className="MainBackground">
+          <div className="GradientEffect">
             <div className="Form_Container">
               <form className="Input_Control" onSubmit={handleAddItem}>
                 <label className="labelPos">Question:</label>
@@ -130,28 +130,29 @@ export const CardNavigator = props => {
     return (
       <div className="Content_Container">
         <div className="Show_Container">
-          <div classname="Button_Control">
+          <div className="Button_Control">
             <Button
-              className="ButtonStyle"
+              className="ButtonStyle addCardBtn"
               variant="primary"
               onClick={handleClickAdd}
             >
               Add Card
             </Button>
             <Button
-              className="ButtonStyle"
+              className="ButtonStyle deleteCardBtn"
               variant="primary"
               onClick={handleClickDeleteLast}
             >
               Delete Last
             </Button>
             <Button
-              className="ButtonStyle"
+              className="ButtonStyle deleteCardBtn"
               variant="primary"
               onClick={handleClickDeleteAll}
             >
               Delete All
             </Button>
+
             <input
               type="text"
               value={index}
@@ -160,7 +161,7 @@ export const CardNavigator = props => {
               onChange={indexHandleChange}
             />
             <Button
-              className="ButtonStyle"
+              className="ButtonStyle deleteCardBtn"
               onClick={handleClickDeleteCertain}
               hint="Enter Card to Delete"
               size="small"

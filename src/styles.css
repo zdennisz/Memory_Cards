@@ -72,9 +72,12 @@ ul {
 .Show_Container {
 }
 .Button_Control {
-  bottom: 2%;
-  left: 2%;
   position: fixed;
+  bottom: 2%;
+  left: 1.5%;
+  display: grid;
+  grid-gap: 10px;
+  margin: auto;
 }
 
 .ButtonStyle {
@@ -113,6 +116,10 @@ input {
   font-size: 20px;
 }
 
+#indexToDelete {
+  width: 197px;
+}
+
 .addButton {
   height: 50px;
   width: 200px;
@@ -128,7 +135,7 @@ input {
   height: 50px;
 }
 
-.gradient {
+.GradientEffect {
   display: flex;
   margin: 1.5% 1% 1% 1.5%;
   width: 700px;
@@ -139,10 +146,34 @@ input {
     rgba(255, 46, 99, 1) 72%
   );
 }
-.dullbackground {
+.MainBackground {
   height: 440px;
   display: inline-block;
   width: 720px;
   background-color: rgb(234, 234, 234);
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.6);
+}
+
+.addCardBtn {
+  height: 50px;
+  width: 200px;
+  background-color: rgb(8, 217, 214);
+  border-color: transparent;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
+  font-size: 20px;
+}
+
+.deleteCardBtn {
+  height: 50px;
+  width: 200px;
+  background-color: rgb(255, 46, 99);
+  border-color: transparent;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
+  font-size: 20px;
+}
+
+fieldset {
+  display: grid;
+  border-color: rgb(234, 234, 234);
+  grid-gap: 1px;
 }
