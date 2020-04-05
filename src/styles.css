@@ -196,18 +196,22 @@ input {
 .closedFloatingMenu {
   opacity: 0;
   z-index: -1000;
+  position: absolute;
+  bottom: -100px;
 }
 
 .card_background {
   display: grid;
   background-color: rgb(234, 234, 234);
-  height: 200px;
-  width: 200px;
+  height: 170px;
+  width: 320px;
 }
 
 .card_gardient {
-  height: 150px;
-  width: 150px;
+  margin-left: 0.9vh;
+  margin-top: 0.5vh;
+  height: 160px;
+  width: 300px;
   background: linear-gradient(
     180deg,
     rgba(8, 217, 214, 1) 49%,
@@ -216,7 +220,12 @@ input {
 }
 
 .card_content {
-  height: 100px;
-  width: 100px;
+  margin-top: 0.4vh;
+  margin-left: 1vh;
+  height: 150px;
+  width: 280px;
   background-color: rgb(234, 234, 234);
+}
+.card_text {
+  padding-top: 17%;
 }

@@ -20,7 +20,9 @@ export const MemoryCard = props => {
       <div className="card_background" onClick={handlecardClick}>
         <div className="card_gardient">
           <div className="card_content">
-            #{props.cardIndex + 1} <br /> {props.question.question} ?
+            <div className="card_text">
+              #{props.cardIndex + 1} <br /> {props.question.question}
+            </div>
           </div>
         </div>
       </div>
@@ -30,35 +32,12 @@ export const MemoryCard = props => {
       <div className="card_background " onClick={handlecardClick}>
         <div className="card_gardient">
           <div className="card_contet">
-            #{props.cardIndex + 1} <br /> {props.answer.answer}
+            <div className="card_text">
+              #{props.cardIndex + 1} <br /> {props.answer.answer}
+            </div>
           </div>
         </div>
       </div>
     );
   }
 };
-
-/* 
-      <Card className="cardProperties" onClick={handlecardClick}>
-        <CardActionArea>
-          <CardContent>
-            <Typography variant="body2" color="textSecondary" component="p">
-              #{props.cardIndex + 1} <br /> {props.question.question} ?
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
-      */
-
-/* 
-      <Card className="cardProperties" onClick={handlecardClick}>
-        <CardActionArea>
-          <CardContent>
-            <Typography variant="body2" color="textSecondary" component="p">
-              #{props.cardIndex + 1} <br />
-              {props.answer.answer}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
-      */

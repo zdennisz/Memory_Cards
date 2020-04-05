@@ -178,13 +178,6 @@ export const CardNavigator = props => {
                 Delete All
               </Button>
 
-              <input
-                type="text"
-                value={index}
-                id="indexToDelete"
-                placeholder="Card to Delete"
-                onChange={indexHandleChange}
-              />
               <Button
                 className="ButtonStyle deleteCardBtn"
                 onClick={handleClickDeleteCertain}
@@ -192,8 +185,15 @@ export const CardNavigator = props => {
                 size="small"
                 color="primary"
               >
-                Delete
+                Delete Index
               </Button>
+              <input
+                type="text"
+                value={index}
+                id="indexToDelete"
+                placeholder="Card to Delete"
+                onChange={indexHandleChange}
+              />
             </div>
           </div>
 
