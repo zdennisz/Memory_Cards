@@ -15,16 +15,21 @@ ul {
   list-style-type: none;
   flex-direction: row;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .listItem {
-  flex-basis: 1;
+  flex-basis: 250px;
+  margin-left: 10px;
+  flex-grow: 1;
+}
+.listItem:hover {
+  background-color: rgba(255, 0, 0, 1);
 }
 
 .cardProperties {
-  width: 345;
-  height: 140;
+  width: 400;
+  height: 200;
 }
 .Form_Container {
   display: flex;
@@ -191,4 +196,27 @@ input {
 .closedFloatingMenu {
   opacity: 0;
   z-index: -1000;
+}
+
+.card_background {
+  display: grid;
+  background-color: rgb(234, 234, 234);
+  height: 200px;
+  width: 200px;
+}
+
+.card_gardient {
+  height: 150px;
+  width: 150px;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 217, 214, 1) 49%,
+    rgba(255, 46, 99, 1) 72%
+  );
+}
+
+.card_content {
+  height: 100px;
+  width: 100px;
+  background-color: rgb(234, 234, 234);
 }
