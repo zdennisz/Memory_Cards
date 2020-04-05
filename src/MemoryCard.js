@@ -1,7 +1,3 @@
-//import CardActionArea from "@material-ui/core/CardActionArea";
-//import CardContent from "@material-ui/core/CardContent";
-//import Typography from "@material-ui/core/Typography";
-//import Card from "@material-ui/core/Card";
 import { useState } from "react";
 import React from "react";
 export const MemoryCard = props => {
@@ -29,9 +25,9 @@ export const MemoryCard = props => {
     );
   } else {
     return (
-      <div className="card_background " onClick={handlecardClick}>
+      <div className="card_background" onClick={handlecardClick}>
         <div className="card_gardient">
-          <div className="card_contet">
+          <div className="card_content">
             <div className="card_text">
               #{props.cardIndex + 1} <br /> {props.answer.answer}
             </div>

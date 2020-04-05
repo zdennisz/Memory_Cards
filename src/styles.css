@@ -23,9 +23,6 @@ ul {
   margin-left: 10px;
   flex-grow: 1;
 }
-.listItem:hover {
-  background-color: rgba(255, 0, 0, 1);
-}
 
 .cardProperties {
   width: 400;
@@ -201,10 +198,13 @@ input {
 }
 
 .card_background {
+  position: relative;
   display: grid;
   background-color: rgb(234, 234, 234);
   height: 170px;
   width: 320px;
+  transition: transform 0.3s;
+  transform-style: preserve-3d;
 }
 
 .card_gardient {
@@ -220,6 +220,7 @@ input {
 }
 
 .card_content {
+  position: absolute;
   margin-top: 0.4vh;
   margin-left: 1vh;
   height: 150px;
@@ -228,4 +229,8 @@ input {
 }
 .card_text {
   padding-top: 17%;
+}
+
+.card_background:active {
+  transform: rotateY(360deg); /* Standard syntax */
 }
