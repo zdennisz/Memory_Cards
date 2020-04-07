@@ -25,7 +25,6 @@ export const CardNavigator = props => {
 
   const handleAddItem = () => {
     let amountOfCards = cards.length;
-    console.log(amountOfCards);
     let card = {
       cardIndex: amountOfCards,
       question: { question },
@@ -39,7 +38,14 @@ export const CardNavigator = props => {
 
   const handleClickDeleteLast = () => {
     if (cards.length > 0) {
-      setCardsArray(cards.pop());
+      const newCards = cards.filter(function(e) {
+        if (e.cardIndex !== cards.length - 1) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+      setCardsArray(newCards);
     } else {
       alert("There are no cards to delete");
     }
@@ -60,12 +66,12 @@ export const CardNavigator = props => {
   };
   const handleClickDeleteCertain = () => {
     let updateIndex = false;
-    if (index > this.cards.length || index === 0 || typeof index !== "number") {
+    if (index > cards.length || index === 0 || typeof index !== "number") {
       alert("There are no cards under that Id");
     } else {
       let indexToDel = index - 1;
       let i;
-      for (i = 0; i < this.cards.length; i++) {
+      for (i = 0; i < cards.length; i++) {
         if (cards[i].cardIndex === indexToDel) {
           cards.splice(indexToDel, 1);
           updateIndex = true;
