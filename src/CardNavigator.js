@@ -1,15 +1,16 @@
 import { useState } from "react";
 import React from "react";
 import Button from "react-bootstrap/Button";
+// import ControlledCarousel from "./ControlledCarousel"
 import { MemoryCardList } from "./MemoryCardList";
+
 export const CardNavigator = props => {
-  let [cards, setCount] = useState(0); //controls the main data structure
+  const [cards, setCardsArray] = useState([]); //controls the main data structure
   const [index, setIndex] = useState(0); //controls  getting index from input
   const [question, setQuestion] = useState(""); //controls the get question
   const [answer, setAnswer] = useState(""); //controls the get answer
   const [viewCards, setView] = useState(0); //controls the  view state
   const [openMenu, setOpenMenu] = useState(1);
-  cards = props.cards;
 
   const questionHandleChange = event => {
     setQuestion(event.target.value);
@@ -24,12 +25,13 @@ export const CardNavigator = props => {
 
   const handleAddItem = () => {
     let amountOfCards = cards.length;
+    console.log(amountOfCards);
     let card = {
       cardIndex: amountOfCards,
       question: { question },
       answer: { answer }
     };
-    setCount(cards.push(card));
+    setCardsArray(cards.concat(card));
     setAnswer("");
     setQuestion("");
     setView(0);
@@ -37,7 +39,7 @@ export const CardNavigator = props => {
 
   const handleClickDeleteLast = () => {
     if (cards.length > 0) {
-      setCount(cards.pop());
+      setCardsArray(cards.pop());
     } else {
       alert("There are no cards to delete");
     }
@@ -53,20 +55,17 @@ export const CardNavigator = props => {
     if (amountOfCards === 0) {
       alert("There are no cards to delete");
     } else {
-      for (let i = 0; i <= amountOfCards; i++) {
-        cards.pop();
-      }
-      setCount(cards);
+      setCardsArray([]);
     }
   };
   const handleClickDeleteCertain = () => {
     let updateIndex = false;
-    if (index > cards.length || index === 0 || typeof index !== "number") {
+    if (index > this.cards.length || index === 0 || typeof index !== "number") {
       alert("There are no cards under that Id");
     } else {
       let indexToDel = index - 1;
       let i;
-      for (i = 0; i < cards.length; i++) {
+      for (i = 0; i < this.cards.length; i++) {
         if (cards[i].cardIndex === indexToDel) {
           cards.splice(indexToDel, 1);
           updateIndex = true;
@@ -74,12 +73,12 @@ export const CardNavigator = props => {
         }
       }
       if (updateIndex) {
-        for (let j = i; j < cards.length; j++) {
+        for (let j = i; j < this.cards.length; j++) {
           //update the card index to align with actual updated array
           cards[j].cardIndex--;
         }
       }
-      setCount(cards.length);
+      setCardsArray(cards);
     }
   };
 

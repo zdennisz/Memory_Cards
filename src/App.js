@@ -3,14 +3,12 @@ import "./styles.css";
 
 import { CardNavigator } from "./CardNavigator";
 
-var cards = [];
-
 export default function App() {
   return (
     <div className="App">
       <div className="Main_Container">
         <label id="appName">Memory Cards</label>
-        <CardNavigator cards={cards} />
+        <CardNavigator />
       </div>
     </div>
   );
