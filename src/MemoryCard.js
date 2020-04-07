@@ -17,7 +17,7 @@ export const MemoryCard = props => {
         <div className="card_gardient">
           <div className="card_content">
             <div className="card_text">
-              #{props.cardIndex + 1} <br /> {props.question.question}
+              #{props.cardIndex} <br /> {props.question.question}
             </div>
           </div>
         </div>
@@ -29,7 +29,7 @@ export const MemoryCard = props => {
         <div className="card_gardient">
           <div className="card_content">
             <div className="card_text">
-              #{props.cardIndex + 1} <br /> {props.answer.answer}
+              #{props.cardIndex} <br /> {props.answer.answer}
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import { MemoryCardList } from "./MemoryCardList";
 
 export const CardNavigator = props => {
-  const [cards, setCardsArray] = useState([]); //controls the main data structure
+  let [cards, setCardsArray] = useState([]); //controls the main data structure
   const [index, setIndex] = useState(0); //controls  getting index from input
   const [question, setQuestion] = useState(""); //controls the get question
   const [answer, setAnswer] = useState(""); //controls the get answer
@@ -24,7 +24,7 @@ export const CardNavigator = props => {
   };
 
   const handleAddItem = () => {
-    let amountOfCards = cards.length;
+    let amountOfCards = cards.length + 1;
     let card = {
       cardIndex: amountOfCards,
       question: { question },
@@ -34,12 +34,13 @@ export const CardNavigator = props => {
     setAnswer("");
     setQuestion("");
     setView(0);
+    setOpenMenu(1);
   };
 
   const handleClickDeleteLast = () => {
     if (cards.length > 0) {
-      const newCards = cards.filter(function(e) {
-        if (e.cardIndex !== cards.length - 1) {
+      let newCards = cards.filter(function(e) {
+        if (e.cardIndex !== cards.length) {
           return true;
         } else {
           return false;
@@ -65,26 +66,25 @@ export const CardNavigator = props => {
     }
   };
   const handleClickDeleteCertain = () => {
-    let updateIndex = false;
-    if (index > cards.length || index === 0 || typeof index !== "number") {
+    var i,
+      j = 0;
+
+    if (index > cards.length || index <= 0) {
       alert("There are no cards under that Id");
     } else {
-      let indexToDel = index - 1;
-      let i;
-      for (i = 0; i < cards.length; i++) {
-        if (cards[i].cardIndex === indexToDel) {
-          cards.splice(indexToDel, 1);
-          updateIndex = true;
-          break;
+      let newCards = cards.filter(function(e) {
+        if (e.cardIndex.toString() !== index.toString()) {
+          return true;
+        } else {
+          return false;
         }
+      });
+
+      for (i = 0; i < newCards.length; i++) {
+        j++;
+        newCards[i].cardIndex = j;
       }
-      if (updateIndex) {
-        for (let j = i; j < this.cards.length; j++) {
-          //update the card index to align with actual updated array
-          cards[j].cardIndex--;
-        }
-      }
-      setCardsArray(cards);
+      setCardsArray(newCards);
     }
   };
 

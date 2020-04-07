@@ -9,13 +9,8 @@ function ListItemCard(props) {
 }
 
 export const MemoryCardList = props => {
-  const cards = props.cards;
-  if (props.cards.length > 0) {
-    const listItems = cards.map(cardId => (
-      <ListItemCard key={cardId.cardIndex.toString()} {...cardId} />
-    ));
-    return <ul>{listItems}</ul>;
-  } else {
-    return null;
-  }
+  const listItems = props.cards.map(cardId => (
+    <ListItemCard key={cardId.cardIndex.toString()} {...cardId} />
+  ));
+  return <ul>{listItems}</ul>;
 };
