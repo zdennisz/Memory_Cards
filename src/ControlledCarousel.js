@@ -1,20 +1,27 @@
 import { useState } from "react";
 import React from "react";
-import { MemoryCardList } from "./MemoryCardList";
+import { ListItemCard } from "./MemoryCardList";
 import Carousel from "react-bootstrap/Carousel";
 
 export const ControlledCarousel = props => {
-  let [activeIndex, setActiveIndex] = useState(0);
+  const [activeCard, setActiveCard] = useState(0);
 
-  const componentDidMount = () => {
-    setActiveIndex(props.indexToDelete);
+  const handleSelect = (selectedIndex, e) => {
+    console.log(e);
+    if (e.direction === "prev") {
+      setActiveCard(--selectedIndex);
+    } else {
+      setActiveCard(++selectedIndex);
+    }
   };
 
-  //<MemoryCardList cards={props.cards} />
-
   return (
-    <Carousel>
-      <Carousel.Item />
+    <Carousel activeIndex={activeCard} onSelect={handleSelect}>
+      <Carousel.Item>
+        {props.cards.length > 0 ? (
+          <ListItemCard cardToShow={props.cards[activeCard]} />
+        ) : null}
+      </Carousel.Item>
     </Carousel>
   );
 };

@@ -1,8 +1,7 @@
 import { useState } from "react";
 import React from "react";
 import Button from "react-bootstrap/Button";
-import { ControlledCarousel } from "./ControlledCarousel";
-//import { MemoryCardList } from "./MemoryCardList";
+import { MemoryCardList } from "./MemoryCardList";
 
 export const CardNavigator = props => {
   let [cards, setCardsArray] = useState([]); //controls the main data structure
@@ -201,9 +200,8 @@ export const CardNavigator = props => {
               />
             </div>
           </div>
-
           <div id="list">
-            <ControlledCarousel cards={cards} />
+            <MemoryCardList cards={cards} />
           </div>
         </div>
       </div>
