@@ -11,26 +11,12 @@ html {
   left: 0;
   top: 0;
 }
-ul {
-  list-style-type: none;
-  flex-direction: row;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.listItem {
-  flex-basis: 250px;
-  margin-left: 10px;
-  flex-grow: 1;
-  margin-top: 1%;
-}
 
 .cardProperties {
   width: 400;
   height: 200;
 }
-.Form_Container {
+.formContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,18 +27,18 @@ ul {
   background-color: rgb(234, 234, 234);
   z-index: 2;
 }
-.Input_Control {
+.inputControl {
   display: flex;
   flex-direction: column;
 }
-.Content_Container {
+.contentContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
   height: -webkit-fill-available;
 }
 
-.Main_Container {
+.mainContainer {
   display: flex;
   flex-direction: column;
 }
@@ -73,9 +59,9 @@ ul {
   filter: drop-shadow(2px 2px rgb(254, 254, 254));
 }
 
-.Show_Container {
+.showContainer {
 }
-.Button_Control {
+.buttonControl {
   position: fixed;
   bottom: 2%;
   left: 1.5%;
@@ -85,7 +71,7 @@ ul {
   z-index: 10;
 }
 
-.ButtonStyle {
+.buttonStyle {
   border-color: transparent;
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
   background-color: rgb(8, 217, 214);
@@ -93,7 +79,7 @@ ul {
   cursor: pointer;
   margin-top: 5px;
 }
-.x_Btn {
+.xBtn {
   background-color: transparent;
   border: none;
   height: fit-content;
@@ -101,7 +87,7 @@ ul {
   margin-top: 0%;
 }
 
-.cardinfo {
+.cardInfo {
   margin-bottom: 20px;
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
   width: 500px;
@@ -142,7 +128,7 @@ input {
   height: 50px;
 }
 
-.GradientEffect {
+.gradientEffect {
   display: flex;
   margin: 1.5% 1% 1% 1.5%;
   width: 700px;
@@ -153,7 +139,7 @@ input {
     rgba(255, 46, 99, 1) 72%
   );
 }
-.MainBackground {
+.mainBackground {
   height: 440px;
   display: inline-block;
   width: 720px;
@@ -180,7 +166,7 @@ input {
   font-size: 20px;
 }
 
-.FloatingMenu {
+.floatingMenu {
   position: absolute;
   left: 220px;
   bottom: 0px;
@@ -198,42 +184,4 @@ input {
   z-index: -1000;
   position: absolute;
   bottom: -100px;
-}
-
-.card_background {
-  position: relative;
-  display: grid;
-  background-color: rgb(234, 234, 234);
-  height: 170px;
-  width: 320px;
-  transition: transform 0.3s;
-  transform-style: preserve-3d;
-}
-
-.card_gardient {
-  margin-left: 0.9vh;
-  margin-top: 0.5vh;
-  height: 160px;
-  width: 300px;
-  background: linear-gradient(
-    180deg,
-    rgba(8, 217, 214, 1) 49%,
-    rgba(255, 46, 99, 1) 72%
-  );
-}
-
-.card_content {
-  position: absolute;
-  margin-top: 0.4vh;
-  margin-left: 1vh;
-  height: 150px;
-  width: 280px;
-  background-color: rgb(234, 234, 234);
-}
-.card_text {
-  padding-top: 17%;
-}
-
-.card_background:active {
-  transform: rotateY(360deg); /* Standard syntax */
 }

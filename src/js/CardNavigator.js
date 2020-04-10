@@ -100,14 +100,14 @@ export const CardNavigator = props => {
   };
   if (viewCards === 1) {
     return (
-      <div className="Content_Container ">
-        <div className="MainBackground">
-          <div className="GradientEffect">
-            <div className="Form_Container">
-              <form className="Input_Control" onSubmit={handleAddItem}>
+      <div className="contentContainer ">
+        <div className="mainBackground">
+          <div className="gradientEffect">
+            <div className="formContainer">
+              <form className="inputControl" onSubmit={handleAddItem}>
                 <label className="labelPos">Question:</label>
                 <input
-                  className="cardinfo"
+                  className="cardInfo"
                   type="text"
                   value={question}
                   onChange={questionHandleChange}
@@ -115,14 +115,14 @@ export const CardNavigator = props => {
 
                 <label className="labelPos">Answer:</label>
                 <input
-                  className="cardinfo"
+                  className="cardInfo"
                   type="text"
                   value={answer}
                   onChange={answerHandleChange}
                 />
 
                 <input
-                  className="ButtonStyle addButton"
+                  className="buttonStyle addButton"
                   type="submit"
                   value="Add"
                 />
@@ -131,7 +131,7 @@ export const CardNavigator = props => {
           </div>
         </div>
         <Button
-          className="x_Btn ButtonStyle"
+          className="xBtn buttonStyle"
           variant="primary"
           onClick={handleCancelEditMode}
         >
@@ -141,18 +141,18 @@ export const CardNavigator = props => {
     );
   } else {
     return (
-      <div className="Content_Container">
-        <div className="Show_Container">
-          <div className="Button_Control">
+      <div className="contentContainer">
+        <div className="showContainer">
+          <div className="buttonControl">
             <Button
-              className="ButtonStyle addCardBtn"
+              className="buttonStyle addCardBtn"
               variant="primary"
               onClick={handleClickAdd}
             >
               Add Card
             </Button>
             <Button
-              className="ButtonStyle deleteCardBtn"
+              className="buttonStyle deleteCardBtn"
               hint="Enter Card to Delete"
               onClick={handleOpenMenu}
               size="small"
@@ -163,19 +163,19 @@ export const CardNavigator = props => {
             <div
               className={
                 openMenu
-                  ? "FloatingMenu closedFloatingMenu"
-                  : "FloatingMenu openFloatingMenu"
+                  ? "floatingMenu closedFloatingMenu"
+                  : "floatingMenu openFloatingMenu"
               }
             >
               <Button
-                className="ButtonStyle deleteCardBtn"
+                className="buttonStyle deleteCardBtn"
                 variant="primary"
                 onClick={handleClickDeleteLast}
               >
                 Delete Last
               </Button>
               <Button
-                className="ButtonStyle deleteCardBtn"
+                className="buttonStyle deleteCardBtn"
                 variant="primary"
                 onClick={handleClickDeleteAll}
               >
@@ -183,7 +183,7 @@ export const CardNavigator = props => {
               </Button>
 
               <Button
-                className="ButtonStyle deleteCardBtn"
+                className="buttonStyle deleteCardBtn"
                 onClick={handleClickDeleteCertain}
                 hint="Enter Card to Delete"
                 size="small"

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import React from "react";
+import "../styles/MemoryCard.css";
 export const MemoryCard = props => {
   const [sideOfCard, setSideOfCard] = useState(0);
   //0 is the side of the question and 1 of the answer
@@ -13,10 +14,10 @@ export const MemoryCard = props => {
 
   if (sideOfCard === 0) {
     return (
-      <div className="card_background" onClick={handlecardClick}>
-        <div className="card_gardient">
-          <div className="card_content">
-            <div className="card_text">
+      <div className="cardBackground" onClick={handlecardClick}>
+        <div className="cardGardient">
+          <div className="cardContent">
+            <div className="cardText">
               #{props.cardIndex} <br /> {props.question.question}
             </div>
           </div>
@@ -25,10 +26,10 @@ export const MemoryCard = props => {
     );
   } else {
     return (
-      <div className="card_background" onClick={handlecardClick}>
-        <div className="card_gardient">
-          <div className="card_content">
-            <div className="card_text">
+      <div className="cardBackground" onClick={handlecardClick}>
+        <div className="cardGardient">
+          <div className="cardContent">
+            <div className="cardText">
               #{props.cardIndex} <br /> {props.answer.answer}
             </div>
           </div>

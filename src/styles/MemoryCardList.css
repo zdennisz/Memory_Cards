@@ -1,0 +1,14 @@
+ul {
+  list-style-type: none;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.listItem {
+  flex-basis: 250px;
+  margin-left: 10px;
+  flex-grow: 1;
+  margin-top: 1%;
+}
