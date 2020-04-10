@@ -2,6 +2,17 @@ html {
   background-color: rgb(37, 45, 52);
 }
 
+.contentContainer {
+  overflow-y: scroll;
+}
+.contentContainer,
+.contentContainer:before,
+.contentContainer:after {
+  box-sizing: inherit;
+  height: 91vh;
+  box-sizing: border-box;
+}
+
 .App {
   font-family: sans-serif;
   text-align: center;
@@ -12,10 +23,6 @@ html {
   top: 0;
 }
 
-.cardProperties {
-  width: 400;
-  height: 200;
-}
 .formContainer {
   display: flex;
   flex-direction: column;
@@ -31,12 +38,6 @@ html {
   display: flex;
   flex-direction: column;
 }
-.contentContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  height: -webkit-fill-available;
-}
 
 .mainContainer {
   display: flex;
@@ -44,9 +45,9 @@ html {
 }
 
 #appName {
-  margin-top: 12%;
-  font-family: Kameron;
-  font-size: 72px;
+  font-family: Berlin Sans;
+  font-weight: 900;
+  font-size: 3em;
   background: linear-gradient(
     180deg,
     rgba(8, 217, 214, 1) 49%,
@@ -56,7 +57,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 2%;
-  filter: drop-shadow(2px 2px rgb(254, 254, 254));
+  filter: drop-shadow(1.5px 1.5px rgb(254, 254, 254));
 }
 
 .showContainer {

@@ -1,6 +1,7 @@
 import React from "react";
 import { MemoryCard } from "./MemoryCard";
-import "../styles/MemoryCardList.css";
+import "../styles/MemoryCard.css";
+import "../styles/styles.css";
 function ListItemCard(props) {
   return (
     <li className="listItem">

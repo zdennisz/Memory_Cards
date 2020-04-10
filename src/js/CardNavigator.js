@@ -2,7 +2,7 @@ import { useState } from "react";
 import React from "react";
 import Button from "react-bootstrap/Button";
 import { MemoryCardList } from "./MemoryCardList";
-
+import "../styles/styles.css";
 export const CardNavigator = props => {
   let [cards, setCardsArray] = useState([]); //controls the main data structure
   const [index, setIndex] = useState(0); //controls  getting index from input
@@ -100,7 +100,7 @@ export const CardNavigator = props => {
   };
   if (viewCards === 1) {
     return (
-      <div className="contentContainer ">
+      <div className="contentContainer">
         <div className="mainBackground">
           <div className="gradientEffect">
             <div className="formContainer">
@@ -142,67 +142,65 @@ export const CardNavigator = props => {
   } else {
     return (
       <div className="contentContainer">
-        <div className="showContainer">
-          <div className="buttonControl">
+        <div className="buttonControl">
+          <Button
+            className="buttonStyle addCardBtn"
+            variant="primary"
+            onClick={handleClickAdd}
+          >
+            Add Card
+          </Button>
+          <Button
+            className="buttonStyle deleteCardBtn"
+            hint="Enter Card to Delete"
+            onClick={handleOpenMenu}
+            size="small"
+            color="primary"
+          >
+            Delete
+          </Button>
+          <div
+            className={
+              openMenu
+                ? "floatingMenu closedFloatingMenu"
+                : "floatingMenu openFloatingMenu"
+            }
+          >
             <Button
-              className="buttonStyle addCardBtn"
+              className="buttonStyle deleteCardBtn"
               variant="primary"
-              onClick={handleClickAdd}
+              onClick={handleClickDeleteLast}
             >
-              Add Card
+              Delete Last
             </Button>
             <Button
               className="buttonStyle deleteCardBtn"
+              variant="primary"
+              onClick={handleClickDeleteAll}
+            >
+              Delete All
+            </Button>
+
+            <Button
+              className="buttonStyle deleteCardBtn"
+              onClick={handleClickDeleteCertain}
               hint="Enter Card to Delete"
-              onClick={handleOpenMenu}
               size="small"
               color="primary"
             >
-              Delete
+              Delete Index
             </Button>
-            <div
-              className={
-                openMenu
-                  ? "floatingMenu closedFloatingMenu"
-                  : "floatingMenu openFloatingMenu"
-              }
-            >
-              <Button
-                className="buttonStyle deleteCardBtn"
-                variant="primary"
-                onClick={handleClickDeleteLast}
-              >
-                Delete Last
-              </Button>
-              <Button
-                className="buttonStyle deleteCardBtn"
-                variant="primary"
-                onClick={handleClickDeleteAll}
-              >
-                Delete All
-              </Button>
-
-              <Button
-                className="buttonStyle deleteCardBtn"
-                onClick={handleClickDeleteCertain}
-                hint="Enter Card to Delete"
-                size="small"
-                color="primary"
-              >
-                Delete Index
-              </Button>
-              <input
-                type="text"
-                value={index}
-                id="indexToDelete"
-                placeholder="Card to Delete"
-                onChange={indexHandleChange}
-              />
-            </div>
+            <input
+              type="text"
+              value={index}
+              id="indexToDelete"
+              placeholder="Card to Delete"
+              onChange={indexHandleChange}
+            />
           </div>
-          <div id="list">
-            <MemoryCardList cards={cards} />
-          </div>
+        </div>
+        <div id="list">
+          <MemoryCardList cards={cards} />
         </div>
       </div>
     );
