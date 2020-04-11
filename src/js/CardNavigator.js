@@ -8,7 +8,7 @@ export const CardNavigator = props => {
   const [question, setQuestion] = useState(""); //controls the get question
   const [answer, setAnswer] = useState(""); //controls the get answer
   const [viewCards, setView] = useState(0); //controls the  view state
-  const [openMenu, setOpenMenu] = useState(0);
+  const [openMenu, setOpenMenu] = useState(1);
   const questionHandleChange = event => {
     setQuestion(event.target.value);
   };
