@@ -8,8 +8,7 @@ export const CardNavigator = props => {
   const [question, setQuestion] = useState(""); //controls the get question
   const [answer, setAnswer] = useState(""); //controls the get answer
   const [viewCards, setView] = useState(0); //controls the  view state
-  const [openMenu, setOpenMenu] = useState("");
-  var floatingMenu;
+  const [openMenu, setOpenMenu] = useState(0);
   const questionHandleChange = event => {
     setQuestion(event.target.value);
   };
@@ -66,7 +65,12 @@ export const CardNavigator = props => {
   const handleClickDeleteCertain = () => {
     var i,
       j = 0;
-
+    var numberToDel = prompt("Please enter index To Delete:");
+    if (numberToDel == null || numberToDel === "") {
+      alert("Please enter a number");
+    } else {
+      setIndex(parseInt(numberToDel, 10));
+    }
     if (index > cards.length || index <= 0) {
       alert("There are no cards under that Id");
     } else {
@@ -94,9 +98,6 @@ export const CardNavigator = props => {
     }
   };
 
-  const indexHandleChange = event => {
-    setIndex(event.target.value);
-  };
   if (viewCards === 1) {
     return (
       <div className="contentContainer">
@@ -150,36 +151,13 @@ export const CardNavigator = props => {
             <div
               className={
                 openMenu
-                  ? "floatingMenu openFloatingMenu"
-                  : "floatingMenu closedFloatingMenu"
+                  ? "lowerDeleteSection"
+                  : "lowerDeleteSection lowerDeleteSectionVisible"
               }
             >
-              <button
-                className="buttonStyle deleteCardBtn"
-                onClick={handleClickDeleteLast}
-              >
-                Delete Last
-              </button>
-              <button
-                className="buttonStyle deleteCardBtn"
-                onClick={handleClickDeleteAll}
-              >
-                Delete All
-              </button>
-              <button
-                className="buttonStyle deleteCardBtn"
-                onClick={handleClickDeleteCertain}
-                hint="Enter Card to Delete"
-              >
-                Delete Index
-              </button>
-              <input
-                type="text"
-                value={index}
-                id="indexToDelete"
-                placeholder="Card to Delete"
-                onChange={indexHandleChange}
-              />
+              <div className="deleteAll" onClick={handleClickDeleteAll} />
+              <div className="deleteLast" onClick={handleClickDeleteLast} />
+              <div className="deleteindex" onClick={handleClickDeleteCertain} />
             </div>
           </div>
         </div>
