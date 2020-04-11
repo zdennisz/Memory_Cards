@@ -1,6 +1,5 @@
 import { useState } from "react";
 import React from "react";
-import Button from "react-bootstrap/Button";
 import { MemoryCardList } from "./MemoryCardList";
 import "../styles/styles.css";
 export const CardNavigator = props => {
@@ -9,8 +8,8 @@ export const CardNavigator = props => {
   const [question, setQuestion] = useState(""); //controls the get question
   const [answer, setAnswer] = useState(""); //controls the get answer
   const [viewCards, setView] = useState(0); //controls the  view state
-  const [openMenu, setOpenMenu] = useState(1);
-
+  const [openMenu, setOpenMenu] = useState("");
+  var floatingMenu;
   const questionHandleChange = event => {
     setQuestion(event.target.value);
   };
@@ -130,73 +129,58 @@ export const CardNavigator = props => {
             </div>
           </div>
         </div>
-        <Button
+        <button
           className="xBtn buttonStyle"
           variant="primary"
           onClick={handleCancelEditMode}
         >
           X
-        </Button>
+        </button>
       </div>
     );
   } else {
     return (
       <div className="contentContainer">
-        <div className="buttonControl">
-          <Button
-            className="buttonStyle addCardBtn"
-            variant="primary"
-            onClick={handleClickAdd}
-          >
-            Add Card
-          </Button>
-          <Button
-            className="buttonStyle deleteCardBtn"
-            hint="Enter Card to Delete"
-            onClick={handleOpenMenu}
-            size="small"
-            color="primary"
-          >
-            Delete
-          </Button>
-          <div
-            className={
-              openMenu
-                ? "floatingMenu closedFloatingMenu"
-                : "floatingMenu openFloatingMenu"
-            }
-          >
-            <Button
-              className="buttonStyle deleteCardBtn"
-              variant="primary"
-              onClick={handleClickDeleteLast}
+        <div className="floatingMenuControl">
+          <div className="upperSection" onClick={handleClickAdd}>
+            <i className="fa fa-plus fa-2x iconLocation" />
+          </div>
+          <div className="lowerSection" onClick={handleOpenMenu}>
+            <i className="fa fa-trash fa-2x iconLocation" />
+            <div
+              className={
+                openMenu
+                  ? "floatingMenu openFloatingMenu"
+                  : "floatingMenu closedFloatingMenu"
+              }
             >
-              Delete Last
-            </Button>
-            <Button
-              className="buttonStyle deleteCardBtn"
-              variant="primary"
-              onClick={handleClickDeleteAll}
-            >
-              Delete All
-            </Button>
-
-            <Button
-              className="buttonStyle deleteCardBtn"
-              onClick={handleClickDeleteCertain}
-              hint="Enter Card to Delete"
-              size="small"
-              color="primary"
-            >
-              Delete Index
-            </Button>
-            <input
-              type="text"
-              value={index}
-              id="indexToDelete"
-              placeholder="Card to Delete"
-              onChange={indexHandleChange}
-            />
+              <button
+                className="buttonStyle deleteCardBtn"
+                onClick={handleClickDeleteLast}
+              >
+                Delete Last
+              </button>
+              <button
+                className="buttonStyle deleteCardBtn"
+                onClick={handleClickDeleteAll}
+              >
+                Delete All
+              </button>
+              <button
+                className="buttonStyle deleteCardBtn"
+                onClick={handleClickDeleteCertain}
+                hint="Enter Card to Delete"
+              >
+                Delete Index
+              </button>
+              <input
+                type="text"
+                value={index}
+                id="indexToDelete"
+                placeholder="Card to Delete"
+                onChange={indexHandleChange}
+              />
+            </div>
           </div>
         </div>
         <div id="list">

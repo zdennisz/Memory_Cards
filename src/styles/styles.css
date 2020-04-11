@@ -60,18 +60,61 @@ html {
   filter: drop-shadow(1.5px 1.5px rgb(254, 254, 254));
 }
 
-.showContainer {
-}
-.buttonControl {
-  position: fixed;
-  bottom: 2%;
-  left: 1.5%;
-  display: grid;
-  grid-gap: 10px;
-  margin: auto;
-  z-index: 10;
+/* Floating Menu control */
+.floatingMenuControl {
+  position: absolute;
+  top: 45%;
+  left: 0%;
+  width: 60px;
+  height: 60px;
+  transition-property: width;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
 }
 
+.floatingMenuControl:hover {
+  width: 250px;
+}
+.upperSection {
+  background-color: rgba(8, 217, 214, 1);
+  width: 25%;
+  height: 100%;
+  border-top-right-radius: 20px;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 0 0 2px 0;
+  border-color: rgb(37, 45, 52);
+}
+
+.lowerSection {
+  background-color: rgba(255, 46, 99, 1);
+  width: 25%;
+  height: 100%;
+  border-bottom-right-radius: 20px;
+  cursor: pointer;
+}
+
+.lowerSection:active {
+  transform: translateY(1px);
+}
+.upperSection:active {
+  transform: translateY(1px);
+}
+
+.iconLocation {
+  position: relative;
+  margin-left: -100px;
+  margin-top: 9px;
+  transition-property: margin-left;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+  font-size: 2.6em;
+}
+
+.floatingMenuControl:hover .iconLocation {
+  margin-left: -5px;
+}
+/*  */
 .buttonStyle {
   border-color: transparent;
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
