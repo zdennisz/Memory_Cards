@@ -8,7 +8,6 @@ import deleteLast from "../icons/deleteLast.png";
 
 export const CardNavigator = props => {
   let [cards, setCardsArray] = useState([]); //controls the main data structure
-  const [index, setIndex] = useState(0); //controls  getting index from input
   const [question, setQuestion] = useState(""); //controls the get question
   const [answer, setAnswer] = useState(""); //controls the get answer
   const [viewCards, setView] = useState(0); //controls the  view state
@@ -67,19 +66,19 @@ export const CardNavigator = props => {
     }
   };
   const handleClickDeleteCertain = () => {
-    var i,
-      j = 0;
+    var i, deleteIndex;
+    var j = 0;
     var numberToDel = prompt("Please enter index To Delete:");
     if (numberToDel == null || numberToDel === "") {
       alert("Please enter a number");
     } else {
-      setIndex(parseInt(numberToDel, 10));
+      deleteIndex = parseInt(numberToDel, 10);
     }
-    if (index > cards.length || index <= 0) {
+    if (deleteIndex > cards.length || deleteIndex <= 0) {
       alert("There are no cards under that Id");
     } else {
       let newCards = cards.filter(function(e) {
-        if (e.cardIndex.toString() !== index.toString()) {
+        if (e.cardIndex.toString() !== deleteIndex.toString()) {
           return true;
         } else {
           return false;
