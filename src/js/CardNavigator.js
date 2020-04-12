@@ -107,39 +107,33 @@ export const CardNavigator = props => {
         <div className="mainBackground">
           <div className="gradientEffect">
             <div className="formContainer">
-              <form className="inputControl" onSubmit={handleAddItem}>
-                <label className="labelPos">Question:</label>
+              <div className="inputControl">
                 <input
                   className="cardInfo"
                   type="text"
                   value={question}
+                  placeholder="Question"
                   onChange={questionHandleChange}
                 />
-
-                <label className="labelPos">Answer:</label>
                 <input
                   className="cardInfo"
                   type="text"
                   value={answer}
+                  placeholder="Answer"
                   onChange={answerHandleChange}
                 />
-
-                <input
-                  className="buttonStyle addButton"
-                  type="submit"
-                  value="Add"
-                />
-              </form>
+                <div className="formButtonControl">
+                  <button className="addBtn" onClick={handleAddItem}>
+                    <i class="fa fa-check fa-3x formIconLocation" />
+                  </button>
+                  <button className="xBtn" onClick={handleCancelEditMode}>
+                    <i class="fa fa-times fa-3x formIconLocation" />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <button
-          className="xBtn buttonStyle"
-          variant="primary"
-          onClick={handleCancelEditMode}
-        >
-          X
-        </button>
       </div>
     );
   } else {
