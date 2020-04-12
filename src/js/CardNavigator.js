@@ -143,11 +143,17 @@ export const CardNavigator = props => {
     return (
       <div className="contentContainer">
         <div className="floatingMenuControl">
-          <div className="upperSection" onClick={handleClickAdd}>
-            <i className="fa fa-plus fa-2x iconLocation" />
+          <div className="upperSection">
+            <i
+              className="fa fa-plus fa-2x iconLocation"
+              onClick={handleClickAdd}
+            />
           </div>
-          <div className="lowerSection" onClick={handleOpenMenu}>
-            <i className="fa fa-trash fa-2x iconLocation" />
+          <div className="lowerSection">
+            <i
+              className="fa fa-trash fa-2x iconLocation"
+              onClick={handleOpenMenu}
+            />
             <div
               className={
                 openMenu

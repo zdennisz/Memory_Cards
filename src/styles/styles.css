@@ -73,7 +73,8 @@ html {
   transition-delay: 0.1s;
 }
 
-.floatingMenuControl:hover {
+.floatingMenuControl:hover,
+.floatingMenuControl:active {
   width: 250px;
 }
 .upperSection {
