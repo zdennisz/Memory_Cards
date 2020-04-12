@@ -85,23 +85,3 @@ ul {
 .fontSize {
   font-size: 150%;
 }
-
-@media only screen and (min-width: 1024px) {
-  ul {
-    column-count: 4;
-  }
-}
-
-/* Masonry on medium-sized screens */
-@media only screen and (max-width: 1023px) and (min-width: 768px) {
-  ul {
-    column-count: 3;
-  }
-}
-
-/* Masonry on small screens */
-@media only screen and (max-width: 767px) and (min-width: 400px) {
-  ul {
-    column-count: 2;
-  }
-}
