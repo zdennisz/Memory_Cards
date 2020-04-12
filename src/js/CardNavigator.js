@@ -2,6 +2,10 @@ import { useState } from "react";
 import React from "react";
 import { MemoryCardList } from "./MemoryCardList";
 import "../styles/styles.css";
+import deleteAll from "../icons/deleteAll.png";
+import deleteIndex from "../icons/deleteIndex.png";
+import deleteLast from "../icons/deleteLast.png";
+
 export const CardNavigator = props => {
   let [cards, setCardsArray] = useState([]); //controls the main data structure
   const [index, setIndex] = useState(0); //controls  getting index from input
@@ -161,9 +165,27 @@ export const CardNavigator = props => {
                   : "lowerDeleteSection lowerDeleteSectionVisible"
               }
             >
-              <div className="deleteAll" onClick={handleClickDeleteAll} />
-              <div className="deleteLast" onClick={handleClickDeleteLast} />
-              <div className="deleteindex" onClick={handleClickDeleteCertain} />
+              <div className="deleteAll" onClick={handleClickDeleteAll}>
+                <img
+                  className="deleteIconLocation"
+                  src={deleteAll}
+                  alt="Delete all Cards"
+                />
+              </div>
+              <div className="deleteLast" onClick={handleClickDeleteLast}>
+                <img
+                  className="deleteIconLocation"
+                  src={deleteLast}
+                  alt="Delete all Cards"
+                />
+              </div>
+              <div className="deleteindex" onClick={handleClickDeleteCertain}>
+                <img
+                  className="deleteIconLocation"
+                  src={deleteIndex}
+                  alt="Delete all Cards"
+                />
+              </div>
             </div>
           </div>
         </div>

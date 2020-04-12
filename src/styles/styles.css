@@ -133,18 +133,24 @@ html {
 }
 .deleteAll {
   height: 33%;
-  background-color: red;
+  background-color: rgba(255, 46, 99, 1);
   border-top-right-radius: 10px;
   border-top-left-radius: 3px;
+  border-style: solid;
+  border-width: 0 0 2px 0;
+  border-color: rgb(37, 45, 52);
 }
 
 .deleteLast {
   height: 33%;
-  background-color: blue;
+  background-color: rgba(255, 46, 99, 1);
+  border-style: solid;
+  border-width: 0 0 2px 0;
+  border-color: rgb(37, 45, 52);
 }
 .deleteindex {
   height: 33%;
-  background-color: green;
+  background-color: rgba(255, 46, 99, 1);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -186,12 +192,6 @@ input {
   font-size: 20px;
 }
 
-#indexToDelete {
-  width: 197px;
-  height: 30px;
-  margin-right: 10px;
-}
-
 .addButton {
   height: 50px;
   width: 200px;
@@ -199,12 +199,6 @@ input {
   margin-left: 31%;
   border-color: transparent;
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
-}
-
-.deleteButton {
-  background-color: rgb(255, 46, 99);
-  width: 200px;
-  height: 50px;
 }
 
 .gradientEffect {
@@ -235,32 +229,9 @@ input {
   font-size: 20px;
 }
 
-.deleteCardBtn {
-  margin-right: 15px;
-  height: 50px;
-  width: 200px;
-  background-color: rgb(255, 46, 99);
-  border-color: transparent;
-  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
-  font-size: 20px;
-}
-
-.floatingMenu {
-  position: absolute;
-  left: 220px;
-  bottom: 0px;
-  display: flex;
-  align-items: baseline;
-}
-
-.openFloatingMenu {
-  opacity: 1;
-  z-index: 1000;
-}
-
-.closedFloatingMenu {
-  opacity: 0;
-  z-index: -1000;
-  position: absolute;
-  bottom: -100px;
+.deleteIconLocation {
+  width: 45px;
+  height: 45px;
+  background-size: cover;
+  margin-top: 7px;
 }
