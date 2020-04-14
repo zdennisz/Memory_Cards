@@ -29,14 +29,20 @@ html {
   justify-content: center;
   align-items: center;
   justify-content: space-between;
-  margin: 1% 1% 1% 1%;
-  padding: 90px 90px 100px 90px;
+  height: 70vw;
+  width: 70vw;
+  margin: 3% 0 0 3%;
   background-color: rgb(234, 234, 234);
   z-index: 2;
+  border-radius: 35px;
 }
 .inputControl {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .mainContainer {
@@ -71,6 +77,7 @@ html {
   transition-duration: 0.3s;
   transition-timing-function: ease;
   transition-delay: 0.1s;
+  z-index: 10;
 }
 
 .floatingMenuControl:hover,
@@ -86,6 +93,7 @@ html {
   border-style: solid;
   border-width: 0 0 2px 0;
   border-color: rgb(37, 45, 52);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
 }
 
 .lowerSection {
@@ -94,6 +102,7 @@ html {
   height: 100%;
   border-bottom-right-radius: 20px;
   cursor: pointer;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
 }
 
 .lowerSection:active {
@@ -126,6 +135,7 @@ html {
   display: flex;
   flex-direction: column;
   visibility: hidden;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
 }
 
 .lowerDeleteSectionVisible {
@@ -156,77 +166,78 @@ html {
 }
 
 /*  */
-.buttonStyle {
-  border-color: transparent;
-  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
-  background-color: rgb(8, 217, 214);
-  color: black;
-  cursor: pointer;
-  margin-top: 5px;
+.formButtonControl {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15%;
+  width: 50%;
+  height: 10%;
+  justify-content: space-around;
 }
 .xBtn {
-  background-color: transparent;
+  background-color: rgba(255, 46, 99, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1% 2% 1% 1%;
   border: none;
-  height: fit-content;
-  color: rgb(234, 234, 234);
-  margin-top: 0%;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  max-width: 150px;
+  min-width: 60px;
+}
+.addBtn {
+  background-color: rgba(8, 217, 214, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1% 2% 1% 1%;
+  border: none;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  max-width: 150px;
+  min-width: 60px;
 }
 
 .cardInfo {
-  margin-bottom: 20px;
-  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
-  width: 500px;
-  height: 40px;
+  margin: 6% 1% 1% 0;
+  border: none;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.2);
   z-index: 2;
-}
-
-.labelPos {
-  position: relative;
-  margin-left: -85%;
+  border-radius: 4px;
 }
 
 input:focus {
   caret-color: rgb(255, 46, 99);
 }
+input::placeholder {
+  color: rgb(37, 45, 52);
+}
 input {
   font-size: 20px;
 }
 
-.addButton {
-  height: 50px;
-  width: 200px;
-  background-color: rgb(8, 217, 214);
-  margin-left: 31%;
-  border-color: transparent;
-  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
-}
-
 .gradientEffect {
   display: flex;
-  margin: 1.5% 1% 1% 1.5%;
-  width: 700px;
-  height: 420px;
+  margin: 3% 0 0 3%;
+  width: 75vw;
+  height: 75vw;
   background: linear-gradient(
     180deg,
     rgba(8, 217, 214, 1) 49%,
     rgba(255, 46, 99, 1) 72%
   );
+  border-radius: 35px;
 }
 .mainBackground {
-  height: 440px;
   display: inline-block;
-  width: 720px;
+  height: 35vw;
+  width: 60vw;
   background-color: rgb(234, 234, 234);
-  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.6);
-}
-
-.addCardBtn {
-  height: 50px;
-  width: 200px;
-  background-color: rgb(8, 217, 214);
-  border-color: transparent;
-  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
-  font-size: 20px;
+  box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.8);
+  border-radius: 35px;
 }
 
 .deleteIconLocation {
@@ -234,4 +245,98 @@ input {
   height: 45px;
   background-size: cover;
   margin-top: 7px;
+}
+
+.formIconLocation {
+  /* margin-top: -3%;
+  margin-left: 3%; */
+  height: 5vw;
+  width: 11vw;
+  max-width: 150px;
+  max-height: 50px;
+}
+
+@media only screen and (min-width: 1024px) {
+  ul {
+    column-count: 4;
+  }
+  .mainBackground {
+    height: 35vw;
+    width: 35vw;
+  }
+  .gradientEffect {
+    width: 33vw;
+    height: 33vw;
+    margin: 3% 0 0 3%;
+  }
+  .formContainer {
+    width: 31vw;
+    height: 31vw;
+    margin: 3% 0 0 3%;
+  }
+  input {
+    font-size: 2vw;
+    height: 4vw;
+  }
+  .fa-3x {
+    margin-top: -10px;
+    font-size: 3vw;
+  }
+}
+
+/* Masonry on medium-sized screens */
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  ul {
+    column-count: 3;
+  }
+  .mainBackground {
+    height: 60vw;
+    width: 60vw;
+  }
+  .gradientEffect {
+    width: 55vw;
+    height: 55vw;
+    margin: 4% 0 0 4%;
+  }
+  .formContainer {
+    width: 50vw;
+    height: 50vw;
+    margin: 4% 0 0 4%;
+  }
+  input {
+    font-size: 3.5vw;
+    height: 6vw;
+  }
+  .fa-3x {
+    font-size: 5vw;
+    margin-top: -4px;
+  }
+}
+
+/* Masonry on small screens */
+@media only screen and (max-width: 767px) and (min-width: 320px) {
+  ul {
+    column-count: 2;
+  }
+  .mainBackground {
+    height: 80vw;
+    width: 80vw;
+  }
+  .gradientEffect {
+    width: 75vw;
+    height: 75vw;
+  }
+  .formContainer {
+    width: 70vw;
+    height: 70vw;
+  }
+  input {
+    font-size: 4vw;
+    /* width: 55vw; */
+    height: 10vw;
+  }
+  .fa-3x {
+    font-size: 6vw;
+    margin-top: -3px;
+  }
 }

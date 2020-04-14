@@ -17,14 +17,13 @@ export const MemoryCard = props => {
     return (
       <div className="cardBackground" onClick={handlecardClick}>
         <div className="bar">
-          <div className="cardGrey">
-            <div className="cardGardient">
-              <div className="cardContentContainer">
-                <div className="questionView">{props.question.question}</div>
-                <i className="fa fa-question-circle fontSize" />
-              </div>
-            </div>
-          </div>
+          <div className="cardGrey" />
+          <div className="cardGardient" />
+        </div>
+        <div className="cardContentContainer">
+          <div className="questionView">{props.question.question}</div>
+          <i className="fa fa-question-circle fontSize" />
+          <div className="cardFooter">#{props.cardIndex}</div>
         </div>
       </div>
     );
@@ -32,14 +31,13 @@ export const MemoryCard = props => {
     return (
       <div className="cardBackground" onClick={handlecardClick}>
         <div className="bar">
-          <div className="cardGrey">
-            <div className="cardGardient">
-              <div className="cardContentContainer">
-                <div className="answerView">{props.answer.answer}</div>
-                <i className="fa fa-exclamation-circle fontSize" />
-              </div>
-            </div>
-          </div>
+          <div className="cardGrey" />
+          <div className="cardGardient" />
+        </div>
+        <div className="cardContentContainer">
+          <div className="answerView">{props.answer.answer}</div>
+          <i className="fa fa-exclamation-circle fontSize" />
+          <div className="cardFooter">#{props.cardIndex}</div>
         </div>
       </div>
     );

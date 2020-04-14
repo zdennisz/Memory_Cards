@@ -15,6 +15,7 @@
 .bar {
   margin-left: 4.7%;
   margin-top: 5%;
+  height: 3vw;
 }
 .cardGardient {
   position: absolute;
@@ -31,6 +32,7 @@
 }
 
 .cardGrey {
+  position: absolute;
   height: 5%;
   width: 90%;
   background-color: rgb(127, 127, 127);
@@ -42,6 +44,7 @@
 }
 
 .questionView {
+  position: relative;
   font-size: 1em;
   margin-right: 3%;
 }
@@ -56,7 +59,7 @@
 ul {
   list-style-type: none;
   padding-inline-start: 0;
-  margin-left: 10em;
+  margin-left: 10vw;
   max-width: 70vw;
   column-gap: 1.5em;
 }
@@ -85,23 +88,8 @@ ul {
 .fontSize {
   font-size: 150%;
 }
-
-@media only screen and (min-width: 1024px) {
-  ul {
-    column-count: 4;
-  }
-}
-
-/* Masonry on medium-sized screens */
-@media only screen and (max-width: 1023px) and (min-width: 768px) {
-  ul {
-    column-count: 3;
-  }
-}
-
-/* Masonry on small screens */
-@media only screen and (max-width: 767px) and (min-width: 400px) {
-  ul {
-    column-count: 2;
-  }
+.cardFooter {
+  position: abosulte;
+  bottom: 0;
+  left: 0;
 }
