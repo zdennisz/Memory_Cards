@@ -88,8 +88,10 @@ ul {
 .fontSize {
   font-size: 150%;
 }
+
 .cardFooter {
   position: abosulte;
   bottom: 0;
   left: 0;
 }
+
