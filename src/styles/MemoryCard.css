@@ -10,12 +10,13 @@
   transform-style: preserve-3d;
   border-radius: 5%;
   box-shadow: 5px 5px 5px 0px rgb(8, 217, 214);
+  grid-template-rows: 20px 18vh;
 }
 
 .bar {
   margin-left: 4.7%;
   margin-top: 5%;
-  height: 3vw;
+  height: 10px;
 }
 .cardGardient {
   position: absolute;
@@ -39,19 +40,17 @@
 }
 
 .cardContentContainer {
-  text-align: left;
-  align-items: center;
 }
 
-.questionView {
-  position: relative;
-  font-size: 1em;
-  margin-right: 3%;
+.cardView {
+  display: inline-block;
+  font-size: 80%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 4px 0 0 4px;
+  overflow-wrap: break-word;
 }
-.answerView {
-  font-size: 1em;
-  margin-right: 3%;
-}
+
 .cardBackground:active {
   transform: rotateY(360deg);
 }
@@ -86,12 +85,21 @@ ul {
 }
 
 .fontSize {
-  font-size: 150%;
+  font-size: 94%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 0 2px 2px 0;
 }
-
 .cardFooter {
-  position: abosulte;
+  position: fixed;
   bottom: 0;
-  left: 0;
+  left: 45%;
 }
-
+.cardContentLayout {
+  margin-top: 24%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

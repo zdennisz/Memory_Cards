@@ -21,8 +21,10 @@ export const MemoryCard = props => {
           <div className="cardGardient" />
         </div>
         <div className="cardContentContainer">
-          <div className="questionView">{props.question.question}</div>
-          <i className="fa fa-question-circle fontSize" />
+          <div className="cardContentLayout">
+            <div className="cardView">{props.question.question}</div>
+            <i className="fa fa-question-circle fontSize" />
+          </div>
           <div className="cardFooter">#{props.cardIndex}</div>
         </div>
       </div>
@@ -35,8 +37,10 @@ export const MemoryCard = props => {
           <div className="cardGardient" />
         </div>
         <div className="cardContentContainer">
-          <div className="answerView">{props.answer.answer}</div>
-          <i className="fa fa-exclamation-circle fontSize" />
+          <div className="cardContentLayout">
+            <div className="cardView">{props.answer.answer}</div>
+            <i className="fa fa-exclamation-circle fontSize" />
+          </div>
           <div className="cardFooter">#{props.cardIndex}</div>
         </div>
       </div>
