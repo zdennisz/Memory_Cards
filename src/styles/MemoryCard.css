@@ -40,16 +40,14 @@
 }
 
 .cardContentContainer {
+  width: 20vh;
 }
 
 .cardView {
   display: inline-block;
   font-size: 80%;
-  padding: 3%;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.2);
-  border-radius: 5px 0 0 5px;
-  overflow-wrap: break-word;
+  word-wrap: break-word;
+  max-width: 60%;
 }
 
 .cardBackground:active {
@@ -73,24 +71,25 @@ ul {
   max-height: 100%;
   display: inline-block;
 }
-@media (pointer: fine) {
-  .listItem:hover {
-    transform: scale(1.05);
-    transition: 0.5s ease-out;
-  }
+/* @media (pointer: fine) { */
+.listItem:hover {
+  transform: scale(1.05);
+  transition: 0.5s ease-out;
 }
+/* } */
 .listItem:hover .cardGardient {
   height: 5%;
   width: 90%;
   transition: 0.4s ease-out;
 }
 
+.listItem:active .cardGardient {
+  height: 5%;
+  width: 90%;
+  transition: 0.4s ease-out;
+}
 .fontSize {
   font-size: 94%;
-  padding: 3%;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.2);
-  border-radius: 0 5px 5px 0;
 }
 .cardFooter {
   position: fixed;
@@ -99,10 +98,20 @@ ul {
   font-size: 70%;
 }
 .cardContentLayout {
-  margin-top: 24%;
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.cardBorderContainer {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  max-width: 90%;
 }
