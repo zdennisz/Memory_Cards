@@ -11,8 +11,8 @@ function ListItemCard(props) {
 }
 
 export const MemoryCardList = props => {
-  const listItems = props.cards.map(cardId => (
-    <ListItemCard key={cardId.cardIndex.toString()} {...cardId} />
+  const listItems = props.cards.map(card => (
+    <ListItemCard key={card.cardIndex.toString()} {...card} />
   ));
   return <ul>{listItems}</ul>;
 };

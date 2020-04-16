@@ -58,6 +58,7 @@ export const CardNavigator = props => {
         }
       });
       setCardsArraySt(newCards);
+      handleOpenMenu();
     } else {
       alert("There are no cards to delete");
     }
@@ -75,6 +76,7 @@ export const CardNavigator = props => {
     } else {
       setCardsArraySt([]);
     }
+    handleOpenMenu();
   };
   const handleClickDeleteCertain = () => {
     var i, deleteIndex;
@@ -101,6 +103,7 @@ export const CardNavigator = props => {
         newCards[i].cardIndex = j;
       }
       setCardsArraySt(newCards);
+      handleOpenMenu();
     }
   };
 
