@@ -7,62 +7,73 @@ import deleteIndex from "../icons/deleteIndex.png";
 import deleteLast from "../icons/deleteLast.png";
 
 export const CardNavigator = props => {
-  let [cards, setCardsArray] = useState([]); //controls the main data structure
-  const [question, setQuestion] = useState(""); //controls the get question
-  const [answer, setAnswer] = useState(""); //controls the get answer
-  const [viewCards, setView] = useState(0); //controls the  view state
-  const [openMenu, setOpenMenu] = useState(1);
+  let [cardsSt, setCardsArraySt] = useState([]); //controls the main data structure
+  const [questionSt, setQuestionSt] = useState(""); //controls the get question
+  const [answerSt, setAnswerSt] = useState(""); //controls the get answer
+  const [viewCardsSt, setViewSt] = useState(0); //controls the  view state
+  const [openMenuSt, setOpenMenuSt] = useState(1);
   const questionHandleChange = event => {
-    setQuestion(event.target.value);
+    setQuestionSt(event.target.value);
   };
 
   const answerHandleChange = event => {
-    setAnswer(event.target.value);
+    setAnswerSt(event.target.value);
   };
   const handleClickAdd = () => {
-    setView(1);
+    setViewSt(1);
   };
 
   const handleAddItem = () => {
-    let amountOfCards = cards.length + 1;
-    let card = {
-      cardIndex: amountOfCards,
-      question: { question },
-      answer: { answer }
-    };
-    setCardsArray(cards.concat(card));
-    setAnswer("");
-    setQuestion("");
-    setView(0);
-    setOpenMenu(1);
+    let question = questionSt;
+    let answer = answerSt;
+    if (question === "" || answer === "") {
+      alert("Impossible to add empty Cards");
+    } else {
+      if (question.charAt(question.length - 1) === "?") {
+        question = question.substring(0, question.length - 1);
+      }
+
+      let amountOfCards = cardsSt.length + 1;
+      let card = {
+        cardIndex: amountOfCards,
+        question: { question },
+        answer: { answer }
+      };
+
+      setCardsArraySt(cardsSt.concat(card));
+    }
+    setAnswerSt("");
+    setQuestionSt("");
+    setViewSt(0);
+    setOpenMenuSt(1);
   };
 
   const handleClickDeleteLast = () => {
-    if (cards.length > 0) {
-      let newCards = cards.filter(function(e) {
-        if (e.cardIndex !== cards.length) {
+    if (cardsSt.length > 0) {
+      let newCards = cardsSt.filter(function(e) {
+        if (e.cardIndex !== cardsSt.length) {
           return true;
         } else {
           return false;
         }
       });
-      setCardsArray(newCards);
+      setCardsArraySt(newCards);
     } else {
       alert("There are no cards to delete");
     }
   };
 
   const handleCancelEditMode = () => {
-    setAnswer("");
-    setQuestion("");
-    setView(0);
+    setAnswerSt("");
+    setQuestionSt("");
+    setViewSt(0);
   };
   const handleClickDeleteAll = () => {
-    var amountOfCards = cards.length;
+    var amountOfCards = cardsSt.length;
     if (amountOfCards === 0) {
       alert("There are no cards to delete");
     } else {
-      setCardsArray([]);
+      setCardsArraySt([]);
     }
   };
   const handleClickDeleteCertain = () => {
@@ -74,10 +85,10 @@ export const CardNavigator = props => {
     } else {
       deleteIndex = parseInt(numberToDel, 10);
     }
-    if (deleteIndex > cards.length || deleteIndex <= 0) {
+    if (deleteIndex > cardsSt.length || deleteIndex <= 0) {
       alert("There are no cards under that Id");
     } else {
-      let newCards = cards.filter(function(e) {
+      let newCards = cardsSt.filter(function(e) {
         if (e.cardIndex.toString() !== deleteIndex.toString()) {
           return true;
         } else {
@@ -89,19 +100,19 @@ export const CardNavigator = props => {
         j++;
         newCards[i].cardIndex = j;
       }
-      setCardsArray(newCards);
+      setCardsArraySt(newCards);
     }
   };
 
   const handleOpenMenu = () => {
-    if (openMenu === 0) {
-      setOpenMenu(1);
+    if (openMenuSt === 0) {
+      setOpenMenuSt(1);
     } else {
-      setOpenMenu(0);
+      setOpenMenuSt(0);
     }
   };
 
-  if (viewCards === 1) {
+  if (viewCardsSt === 1) {
     return (
       <div className="contentContainer">
         <div className="mainBackground">
@@ -111,23 +122,23 @@ export const CardNavigator = props => {
                 <input
                   className="cardInfo"
                   type="text"
-                  value={question}
+                  value={questionSt}
                   placeholder="Question"
                   onChange={questionHandleChange}
                 />
                 <input
                   className="cardInfo"
                   type="text"
-                  value={answer}
+                  value={answerSt}
                   placeholder="Answer"
                   onChange={answerHandleChange}
                 />
                 <div className="formButtonControl">
                   <button className="addBtn" onClick={handleAddItem}>
-                    <i class="fa fa-check fa-3x formIconLocation" />
+                    <i className="fa fa-check fa-3x formIconLocation" />
                   </button>
                   <button className="xBtn" onClick={handleCancelEditMode}>
-                    <i class="fa fa-times fa-3x formIconLocation" />
+                    <i className="fa fa-times fa-3x formIconLocation" />
                   </button>
                 </div>
               </div>
@@ -153,7 +164,7 @@ export const CardNavigator = props => {
             />
             <div
               className={
-                openMenu
+                openMenuSt
                   ? "lowerDeleteSection"
                   : "lowerDeleteSection lowerDeleteSectionVisible"
               }
@@ -183,7 +194,7 @@ export const CardNavigator = props => {
           </div>
         </div>
         <div id="list">
-          <MemoryCardList cards={cards} />
+          <MemoryCardList cards={cardsSt} />
         </div>
       </div>
     );
