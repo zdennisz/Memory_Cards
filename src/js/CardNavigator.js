@@ -122,7 +122,6 @@ export const CardNavigator = props => {
   function updateStateFromLocalStorage() {
     if (localStorage.hasOwnProperty("cards")) {
       let cardlist = localStorage.getItem("cards");
-
       try {
         cardlist = JSON.parse(cardlist);
         setCardsArraySt(cardlist);
