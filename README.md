@@ -12,4 +12,5 @@ Step 2) Fill Q & A <br/>
 
 Step 3) Memorize those pesky terms <br/>
 
+![ManyQA](https://user-images.githubusercontent.com/15849186/79549898-450faf80-80a0-11ea-80f1-11983db44c7b.PNG)
 
