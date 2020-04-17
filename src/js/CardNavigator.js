@@ -122,7 +122,6 @@ export const CardNavigator = props => {
   function updateStateFromLocalStorage() {
     if (localStorage.hasOwnProperty("cards")) {
       let cardlist = localStorage.getItem("cards");
-      console.log(cardlist);
       try {
         cardlist = JSON.parse(cardlist);
         setCardsArraySt(cardlist);
@@ -135,7 +134,6 @@ export const CardNavigator = props => {
   useEffect(() => {
     //componentDidMount
     updateStateFromLocalStorage();
-    console.log("componentDidMount");
   }, []);
 
   if (viewCardsSt === 1) {
