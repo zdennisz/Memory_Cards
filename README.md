@@ -11,6 +11,7 @@ Step 2) Fill Q & A <br/>
 ![EnterQ_A](https://user-images.githubusercontent.com/15849186/79549865-388b5700-80a0-11ea-8676-73d70a993242.PNG)
 
 Step 3) Memorize those pesky terms <br/>
-
+You can delete the last card added or a certain index of a card or of couse you can delete them all if you are sick of them .<br/>
 ![ManyQA](https://user-images.githubusercontent.com/15849186/79549898-450faf80-80a0-11ea-80f1-11983db44c7b.PNG)
+
 
