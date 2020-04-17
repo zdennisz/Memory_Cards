@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import { MemoryCardList } from "./MemoryCardList";
 import "../styles/styles.css";
@@ -7,7 +7,7 @@ import deleteIndex from "../icons/deleteIndex.png";
 import deleteLast from "../icons/deleteLast.png";
 
 export const CardNavigator = props => {
-  let [cardsSt, setCardsArraySt] = useState([]); //controls the main data structure
+  const [cardsSt, setCardsArraySt] = useState([]); //controls the main data structure
   const [questionSt, setQuestionSt] = useState(""); //controls the get question
   const [answerSt, setAnswerSt] = useState(""); //controls the get answer
   const [viewCardsSt, setViewSt] = useState(0); //controls the  view state
@@ -39,7 +39,7 @@ export const CardNavigator = props => {
         question: { question },
         answer: { answer }
       };
-
+      localStorage.setItem("cards", JSON.stringify(cardsSt.concat(card)));
       setCardsArraySt(cardsSt.concat(card));
     }
     setAnswerSt("");
@@ -58,6 +58,7 @@ export const CardNavigator = props => {
         }
       });
       setCardsArraySt(newCards);
+      localStorage.setItem("cards", JSON.stringify(newCards));
       handleOpenMenu();
     } else {
       alert("There are no cards to delete");
@@ -75,6 +76,7 @@ export const CardNavigator = props => {
       alert("There are no cards to delete");
     } else {
       setCardsArraySt([]);
+      localStorage.setItem("cards", JSON.stringify([]));
     }
     handleOpenMenu();
   };
@@ -103,6 +105,8 @@ export const CardNavigator = props => {
         newCards[i].cardIndex = j;
       }
       setCardsArraySt(newCards);
+      localStorage.setItem("cards", JSON.stringify(newCards));
+
       handleOpenMenu();
     }
   };
@@ -114,6 +118,24 @@ export const CardNavigator = props => {
       setOpenMenuSt(0);
     }
   };
+  //on load retreive state from local storage
+  function updateStateFromLocalStorage() {
+    if (localStorage.hasOwnProperty("cards")) {
+      let cardlist = localStorage.getItem("cards");
+
+      try {
+        cardlist = JSON.parse(cardlist);
+        setCardsArraySt(cardlist);
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  }
+
+  useEffect(() => {
+    //componentDidMount
+    updateStateFromLocalStorage();
+  }, []);
 
   if (viewCardsSt === 1) {
     return (
