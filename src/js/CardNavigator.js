@@ -11,7 +11,7 @@ export const CardNavigator = props => {
   const [questionSt, setQuestionSt] = useState(""); //controls the get question
   const [answerSt, setAnswerSt] = useState(""); //controls the get answer
   const [viewCardsSt, setViewSt] = useState(0); //controls the  view state
-  const [openMenuSt, setOpenMenuSt] = useState(1);
+  const [openMenuSt, setOpenMenuSt] = useState(1);//controls the side menu 
   const questionHandleChange = event => {
     setQuestionSt(event.target.value);
   };
