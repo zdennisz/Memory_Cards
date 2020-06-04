@@ -1,4 +1,4 @@
-
+[![DeepScan grade](https://deepscan.io/api/teams/8284/projects/12092/branches/182925/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=8284&pid=12092&bid=182925)<br/>
 :flower_playing_cards: Memory Cards :flower_playing_cards:<br/>
 Memory Card is a fun little tool to help you memorize all kind of stuff from definitions of words to technical terms.<br/>
 
