@@ -22,7 +22,7 @@ This is written in `React.js` (actually the first web app I have ever made, whil
 
 ![EnterQ_A](https://user-images.githubusercontent.com/15849186/79549865-388b5700-80a0-11ea-8676-73d70a993242.PNG)
 
-### :three: emorize those pesky terms
+### :three: Memorize those pesky terms
 
 You can delete the last card added or a certain index of a card or of couse you can delete them all if you are sick of them .<br/>
 
