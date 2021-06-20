@@ -1,8 +1,9 @@
 
-
 # :flower_playing_cards: Memory Cards :flower_playing_cards:
 
 **Memory Card** is a fun *web tool* to help you memorize all kind of stuff, from definitions of words to technical terms. :muscle::brain:
+
+**Link**: https://stoic-leavitt-e78e75.netlify.app
 
 This is written in `React.js` (actually the first web app I have ever made, while learning the mose basiscs concepts from the *docs*).
 
