@@ -1,0 +1,25 @@
+.btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1% 2% 1% 1%;
+  border: none;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  max-width: 150px;
+  min-width: 60px;
+}
+.xBtn {
+  background-color: rgba(255, 46, 99, 1);
+}
+.addBtn {
+  background-color: rgba(8, 217, 214, 1);
+}
+
+.formIconLocation {
+  height: 5vw;
+  width: 11vw;
+  max-width: 150px;
+  max-height: 50px;
+}

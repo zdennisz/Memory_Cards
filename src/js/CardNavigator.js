@@ -2,21 +2,21 @@ import { useState, useEffect } from "react";
 import React from "react";
 import { MemoryCardList } from "./MemoryCardList";
 import "../styles/styles.css";
-import deleteAll from "../icons/deleteAll.png";
-import deleteIndex from "../icons/deleteIndex.png";
-import deleteLast from "../icons/deleteLast.png";
 
-export const CardNavigator = props => {
+import Menu from "./Components/Menu";
+import NewCard from "./Components/NewCard";
+
+export const CardNavigator = (props) => {
   const [cardsSt, setCardsArraySt] = useState([]); //controls the main data structure
   const [questionSt, setQuestionSt] = useState(""); //controls the get question
   const [answerSt, setAnswerSt] = useState(""); //controls the get answer
   const [viewCardsSt, setViewSt] = useState(0); //controls the  view state
-  const [openMenuSt, setOpenMenuSt] = useState(1);//controls the side menu 
-  const questionHandleChange = event => {
+  const [openMenuSt, setOpenMenuSt] = useState(true); //controls the side menu
+  const questionHandleChange = (event) => {
     setQuestionSt(event.target.value);
   };
 
-  const answerHandleChange = event => {
+  const answerHandleChange = (event) => {
     setAnswerSt(event.target.value);
   };
   const handleClickAdd = () => {
@@ -25,7 +25,7 @@ export const CardNavigator = props => {
 
   const handleAddItem = () => {
     let question = questionSt;
-    let answer = answerSt;
+    const answer = answerSt;
     if (question === "" || answer === "") {
       alert("Impossible to add empty Cards");
     } else {
@@ -33,8 +33,8 @@ export const CardNavigator = props => {
         question = question.substring(0, question.length - 1);
       }
 
-      let amountOfCards = cardsSt.length + 1;
-      let card = {
+      const amountOfCards = cardsSt.length + 1;
+      const card = {
         cardIndex: amountOfCards,
         question: { question },
         answer: { answer }
@@ -45,7 +45,7 @@ export const CardNavigator = props => {
     setAnswerSt("");
     setQuestionSt("");
     setViewSt(0);
-    setOpenMenuSt(1);
+    setOpenMenuSt(true);
   };
 
   const handleClickDeleteLast = () => {
@@ -112,11 +112,7 @@ export const CardNavigator = props => {
   };
 
   const handleOpenMenu = () => {
-    if (openMenuSt === 0) {
-      setOpenMenuSt(1);
-    } else {
-      setOpenMenuSt(0);
-    }
+    setOpenMenuSt((state) => !state);
   };
   //on load retreive state from local storage
   function updateStateFromLocalStorage() {
@@ -136,92 +132,32 @@ export const CardNavigator = props => {
     updateStateFromLocalStorage();
   }, []);
 
-  if (viewCardsSt === 1) {
-    return (
-      <div className="contentContainer">
-        <div className="mainBackground">
-          <div className="gradientEffect">
-            <div className="formContainer">
-              <div className="inputControl">
-                <input
-                  className="cardInfo"
-                  type="text"
-                  value={questionSt}
-                  placeholder="Question"
-                  onChange={questionHandleChange}
-                />
-                <input
-                  className="cardInfo"
-                  type="text"
-                  value={answerSt}
-                  placeholder="Answer"
-                  onChange={answerHandleChange}
-                />
-                <Menu handleAddItem={handleAddItem} handleCancelEditMode={handleCancelEditMode} />
-                {/* <div className="formButtonControl">
-                  <button className="addBtn" onClick={handleAddItem}>
-                    <i className="fa fa-check fa-3x formIconLocation" />
-                  </button>
-                  <button className="xBtn" onClick={handleCancelEditMode}>
-                    <i className="fa fa-times fa-3x formIconLocation" />
-                  </button>
-                </div> */}
-              </div>
-            </div>
+  return (
+    <div className="contentContainer">
+      {viewCardsSt ? (
+        <NewCard
+          answerSt={answerSt}
+          questionSt={questionSt}
+          handleAddItem={handleAddItem}
+          handleCancelEditMode={handleCancelEditMode}
+          questionHandleChange={questionHandleChange}
+          answerHandleChange={answerHandleChange}
+        />
+      ) : (
+        <>
+          <Menu
+            openMenuSt={openMenuSt}
+            handleClickAdd={handleClickAdd}
+            handleOpenMenu={handleOpenMenu}
+            handleClickDeleteAll={handleClickDeleteAll}
+            handleClickDeleteLast={handleClickDeleteLast}
+            handleClickDeleteCertain={handleClickDeleteCertain}
+          />
+          <div id="list">
+            <MemoryCardList cards={cardsSt} />
           </div>
-        </div>
-      </div>
-    );
-  } else {
-    return (
-      <div className="contentContainer">
-        <div className="floatingMenuControl">
-          <div className="upperSection">
-            <i
-              className="fa fa-plus fa-2x iconLocation"
-              onClick={handleClickAdd}
-            />
-          </div>
-          <div className="lowerSection">
-            <i
-              className="fa fa-trash fa-2x iconLocation"
-              onClick={handleOpenMenu}
-            />
-            <div
-              className={
-                openMenuSt
-                  ? "lowerDeleteSection"
-                  : "lowerDeleteSection lowerDeleteSectionVisible"
-              }
-            >
-              <div className="deleteAll" onClick={handleClickDeleteAll}>
-                <img
-                  className="deleteIconLocation"
-                  src={deleteAll}
-                  alt="Delete all Cards"
-                />
-              </div>
-              <div className="deleteLast" onClick={handleClickDeleteLast}>
-                <img
-                  className="deleteIconLocation"
-                  src={deleteLast}
-                  alt="Delete all Cards"
-                />
-              </div>
-              <div className="deleteindex" onClick={handleClickDeleteCertain}>
-                <img
-                  className="deleteIconLocation"
-                  src={deleteIndex}
-                  alt="Delete all Cards"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="list">
-          <MemoryCardList cards={cardsSt} />
-        </div>
-      </div>
-    );
-  }
+        </>
+      )}
+    </div>
+  );
 };
