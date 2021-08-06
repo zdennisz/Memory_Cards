@@ -14,9 +14,13 @@ const NewCard = (props) => {
   };
 
   const addItemHandler = () => {
-    props.handleAddItem(answerSt, questionSt);
-    setQuestionSt("");
-    setAnswerSt("");
+    if (!answerSt && !questionSt) {
+      alert("It is impossible to add blank cards");
+    } else {
+      props.handleAddItem(answerSt, questionSt);
+      setQuestionSt("");
+      setAnswerSt("");
+    }
   };
 
   const cancelEditItemHandler = () => {
