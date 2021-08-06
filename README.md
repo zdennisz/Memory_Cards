@@ -5,7 +5,7 @@
 
 **Link**: https://stoic-leavitt-e78e75.netlify.app
 
-This is written in `React.js` (actually the first web app I have ever made, while learning the mose basiscs concepts from the *docs*).
+This is written in `React.js + (Hooks)` (actually the first web app I have ever made, while learning the mose basiscs concepts from the *docs*).
 
 [![DeepScan grade](https://deepscan.io/api/teams/8284/projects/12092/branches/182925/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=8284&pid=12092&bid=182925)
 
