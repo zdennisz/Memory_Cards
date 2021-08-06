@@ -96,7 +96,7 @@ const AppNavigator = () => {
     setOpenMenuSt((state) => !state);
   };
   //on load retreive state from local storage
-  function updateStateFromLocalStorage() {
+  const updateStateFromLocalStorage = () => {
     if (localStorage.hasOwnProperty("cards")) {
       let cardlist = localStorage.getItem("cards");
       try {
@@ -106,7 +106,7 @@ const AppNavigator = () => {
         console.log(e);
       }
     }
-  }
+  };
 
   useEffect(() => {
     //componentDidMount
