@@ -1,6 +1,6 @@
 import React from "react";
 import "./SubMenuButton.css";
-const SideMenuButton = (props) => {
+const SubMenuButton = (props) => {
   const { tooltiptext, imgClassName, altText, imgSrc } = props;
 
   const cliclHandler = () => {
@@ -14,4 +14,4 @@ const SideMenuButton = (props) => {
   );
 };
 
-export default SideMenuButton;
+export default SubMenuButton;

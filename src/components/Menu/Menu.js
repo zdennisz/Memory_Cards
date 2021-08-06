@@ -1,8 +1,8 @@
 import "./Menu.css";
 import React from "react";
-import deleteAll from "../../../icons/deleteAll.png";
-import deleteIndex from "../../../icons/deleteIndex.png";
-import deleteLast from "../../../icons/deleteLast.png";
+import deleteAll from "../../assets/deleteAll.png";
+import deleteIndex from "../../assets/deleteIndex.png";
+import deleteLast from "../../assets/deleteLast.png";
 import SubMenuButton from "../SubMenuButton/SubMenuButton";
 
 const Menu = (props) => {
