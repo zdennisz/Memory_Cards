@@ -1,8 +1,8 @@
 import "./Menu.css";
 import React from "react";
-import deleteAll from "../../icons/deleteAll.png";
-import deleteIndex from "../../icons/deleteIndex.png";
-import deleteLast from "../../icons/deleteLast.png";
+import deleteAll from "../../../icons/deleteAll.png";
+import deleteIndex from "../../../icons/deleteIndex.png";
+import deleteLast from "../../../icons/deleteLast.png";
 
 const Menu = (props) => {
   const { openMenuSt } = props;

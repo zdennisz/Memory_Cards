@@ -3,10 +3,10 @@ import React from "react";
 import { MemoryCardList } from "./MemoryCardList";
 import "../styles/styles.css";
 
-import Menu from "./Components/Menu";
-import NewCard from "./Components/NewCard";
+import Menu from "./components/Menu/Menu";
+import NewCard from "./components/NewCard/NewCard";
 
-export const CardNavigator = (props) => {
+export const CardNavigator = () => {
   const [cardsSt, setCardsArraySt] = useState([]); //controls the main data structure
   const [questionSt, setQuestionSt] = useState(""); //controls the get question
   const [answerSt, setAnswerSt] = useState(""); //controls the get answer

@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "./Button";
+import Button from "../Button/Button";
 import "./NewCard.css";
 const NewCard = (props) => {
   const { answerSt, questionSt } = props;
