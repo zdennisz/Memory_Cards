@@ -5,7 +5,7 @@ import "./MemoryCard.css";
 const MemoryCard = (props) => {
   const [sideOfCard, setSideOfCard] = useState(false);
   const { question, answer, cardIndex } = props;
-
+  let iClassName = "fa fontSize ";
   const handleCardClick = () => {
     setSideOfCard((state) => !state);
   };
@@ -20,7 +20,13 @@ const MemoryCard = (props) => {
         <div className="cardContentLayout">
           <div className="cardBorderContainer">
             <div className="cardView">{sideOfCard ? answer : question}</div>
-            <i className="fa fa-question-circle fontSize" />
+            <i
+              className={
+                sideOfCard
+                  ? iClassName + "fa-exclamation-circle"
+                  : iClassName + "fa-question-circle"
+              }
+            />
           </div>
         </div>
         <div className="cardFooter">#{cardIndex}</div>
