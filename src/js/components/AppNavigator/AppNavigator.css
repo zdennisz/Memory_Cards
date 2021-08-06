@@ -1,0 +1,10 @@
+.contentContainer {
+  overflow-y: scroll;
+}
+.contentContainer,
+.contentContainer:before,
+.contentContainer:after {
+  box-sizing: inherit;
+  height: 91vh;
+  box-sizing: border-box;
+}

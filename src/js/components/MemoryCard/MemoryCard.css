@@ -54,40 +54,6 @@
   transform: rotateY(180deg);
 }
 
-ul {
-  list-style-type: none;
-  padding-inline-start: 0;
-  margin-left: 10vw;
-  max-width: 70vw;
-  column-gap: 1.5em;
-}
-
-.listItem {
-  margin-left: 9vw;
-  padding: 1em;
-  margin: 0 0 1.5em;
-  overflow: hidden;
-  position: relative;
-  max-height: 100%;
-  display: inline-block;
-}
-/* @media (pointer: fine) { */
-.listItem:hover {
-  transform: scale(1.05);
-  transition: 0.5s ease-out;
-}
-/* } */
-.listItem:hover .cardGardient {
-  height: 5%;
-  width: 90%;
-  transition: 0.4s ease-out;
-}
-
-.listItem:active .cardGardient {
-  height: 5%;
-  width: 90%;
-  transition: 0.4s ease-out;
-}
 .fontSize {
   font-size: 94%;
 }

@@ -1,14 +1,14 @@
 import React from "react";
-import "../styles/styles.css";
+import "./App.css";
 
-import { CardNavigator } from "./CardNavigator";
+import AppNavigator from "../js/components/AppNavigator/AppNavigator";
 
 export default function App() {
   return (
-    <div className="App">
+    <div className="app">
       <div className="mainContainer">
-        <label id="appName">Memory Cards</label>
-        <CardNavigator />
+        <label className="title">Memory Cards</label>
+        <AppNavigator />
       </div>
     </div>
   );

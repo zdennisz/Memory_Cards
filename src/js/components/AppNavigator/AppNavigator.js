@@ -1,50 +1,33 @@
-import { useState, useEffect } from "react";
-import React from "react";
-import { MemoryCardList } from "./MemoryCardList";
-import "../styles/styles.css";
+import React, { useState, useEffect } from "react";
 
-import Menu from "./components/Menu/Menu";
-import NewCard from "./components/NewCard/NewCard";
+import "./AppNavigator.css";
+import MemoryCardList from "../MemoryCardList/MemoryCardList";
+import Menu from "../Menu/Menu";
+import NewCard from "../NewCard/NewCard";
 
-export const CardNavigator = () => {
+const AppNavigator = () => {
   const [cardsSt, setCardsArraySt] = useState([]); //controls the main data structure
-  const [questionSt, setQuestionSt] = useState(""); //controls the get question
-  const [answerSt, setAnswerSt] = useState(""); //controls the get answer
-  const [viewCardsSt, setViewSt] = useState(0); //controls the  view state
+  const [viewCardsSt, setViewSt] = useState(false); //controls the  view state
   const [openMenuSt, setOpenMenuSt] = useState(true); //controls the side menu
-  const questionHandleChange = (event) => {
-    setQuestionSt(event.target.value);
-  };
 
-  const answerHandleChange = (event) => {
-    setAnswerSt(event.target.value);
-  };
   const handleClickAdd = () => {
-    setViewSt(1);
+    setViewSt(true);
   };
 
-  const handleAddItem = () => {
-    let question = questionSt;
-    const answer = answerSt;
-    if (question === "" || answer === "") {
-      alert("Impossible to add empty Cards");
-    } else {
-      if (question.charAt(question.length - 1) === "?") {
-        question = question.substring(0, question.length - 1);
-      }
-
-      const amountOfCards = cardsSt.length + 1;
-      const card = {
-        cardIndex: amountOfCards,
-        question: { question },
-        answer: { answer }
-      };
-      localStorage.setItem("cards", JSON.stringify(cardsSt.concat(card)));
-      setCardsArraySt(cardsSt.concat(card));
+  const handleAddItem = (answer, question) => {
+    if (question.charAt(question.length - 1) === "?") {
+      question = question.substring(0, question.length - 1);
     }
-    setAnswerSt("");
-    setQuestionSt("");
-    setViewSt(0);
+
+    const amountOfCards = cardsSt.length + 1;
+    const card = {
+      cardIndex: amountOfCards,
+      question: question,
+      answer: answer
+    };
+    localStorage.setItem("cards", JSON.stringify(cardsSt.concat(card)));
+    setCardsArraySt(cardsSt.concat(card));
+    setViewSt(false);
     setOpenMenuSt(true);
   };
 
@@ -66,9 +49,7 @@ export const CardNavigator = () => {
   };
 
   const handleCancelEditMode = () => {
-    setAnswerSt("");
-    setQuestionSt("");
-    setViewSt(0);
+    setViewSt(false);
   };
   const handleClickDeleteAll = () => {
     var amountOfCards = cardsSt.length;
@@ -136,12 +117,8 @@ export const CardNavigator = () => {
     <div className="contentContainer">
       {viewCardsSt ? (
         <NewCard
-          answerSt={answerSt}
-          questionSt={questionSt}
           handleAddItem={handleAddItem}
           handleCancelEditMode={handleCancelEditMode}
-          questionHandleChange={questionHandleChange}
-          answerHandleChange={answerHandleChange}
         />
       ) : (
         <>
@@ -161,3 +138,5 @@ export const CardNavigator = () => {
     </div>
   );
 };
+
+export default AppNavigator;
