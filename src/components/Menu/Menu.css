@@ -103,16 +103,21 @@
   padding: 5px 0;
   position: absolute;
   z-index: 1;
+  opacity: 0;
+  transition: opacity 1s;
 }
 
 .deleteAll:hover .tooltiptext {
   visibility: visible;
+  opacity: 1;
 }
 
 .deleteindex:hover .tooltiptext {
   visibility: visible;
+  opacity: 1;
 }
 
 .deleteLast:hover .tooltiptext {
   visibility: visible;
+  opacity: 1;
 }
