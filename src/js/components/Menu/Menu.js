@@ -3,6 +3,7 @@ import React from "react";
 import deleteAll from "../../../icons/deleteAll.png";
 import deleteIndex from "../../../icons/deleteIndex.png";
 import deleteLast from "../../../icons/deleteLast.png";
+import SubMenuButton from "../SubMenuButton/SubMenuButton";
 
 const Menu = (props) => {
   const { openMenuSt } = props;
@@ -41,27 +42,27 @@ const Menu = (props) => {
               : "lowerDeleteSection lowerDeleteSectionVisible"
           }
         >
-          <div className="deleteAll" onClick={deleteAllHandler}>
-            <img
-              className="deleteIconLocation"
-              src={deleteAll}
-              alt="Delete all Cards"
-            />
-          </div>
-          <div className="deleteLast" onClick={deleteLastHandler}>
-            <img
-              className="deleteIconLocation"
-              src={deleteLast}
-              alt="Delete all Cards"
-            />
-          </div>
-          <div className="deleteindex" onClick={deleteCertainIndexHandler}>
-            <img
-              className="deleteIconLocation"
-              src={deleteIndex}
-              alt="Delete all Cards"
-            />
-          </div>
+          <SubMenuButton
+            handler={deleteAllHandler}
+            tooltiptext="Delete all cards"
+            imgClassName="deleteAll"
+            altText="Delete all Cards"
+            imgSrc={deleteAll}
+          />
+          <SubMenuButton
+            handler={deleteLastHandler}
+            tooltiptext="Delete last card"
+            imgClassName="deleteLast"
+            altText="Delete last card"
+            imgSrc={deleteLast}
+          />
+          <SubMenuButton
+            handler={deleteCertainIndexHandler}
+            tooltiptext="Delete certain card"
+            imgClassName="deleteindex"
+            altText="Delete certain card"
+            imgSrc={deleteIndex}
+          />
         </div>
       </div>
     </div>

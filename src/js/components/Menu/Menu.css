@@ -93,9 +93,26 @@
   border-bottom-right-radius: 10px;
 }
 
-.deleteIconLocation {
-  width: 45px;
-  height: 45px;
-  background-size: cover;
-  margin-top: 7px;
+.tooltiptext {
+  visibility: hidden;
+  width: 150px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.deleteAll:hover .tooltiptext {
+  visibility: visible;
+}
+
+.deleteindex:hover .tooltiptext {
+  visibility: visible;
+}
+
+.deleteLast:hover .tooltiptext {
+  visibility: visible;
 }
