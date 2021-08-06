@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 
-import AppNavigator from "../js/components/AppNavigator/AppNavigator";
+import AppNavigator from "./components/AppNavigator/AppNavigator";
 
 export default function App() {
   return (

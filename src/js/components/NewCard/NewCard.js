@@ -1,19 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../Button/Button";
 import "./NewCard.css";
 const NewCard = (props) => {
-  const { answerSt, questionSt } = props;
+  const [questionSt, setQuestionSt] = useState(""); //controls the get question
+  const [answerSt, setAnswerSt] = useState(""); //controls the get answer
 
   const questionHandleChange = (event) => {
-    props.questionHandleChange(event);
+    setQuestionSt(event.target.value);
   };
 
-  const answerHandlerChange = (event) => {
-    props.answerHandleChange(event);
+  const answerHandleChange = (event) => {
+    setAnswerSt(event.target.value);
   };
 
   const addItemHandler = () => {
-    props.handleAddItem();
+    props.handleAddItem(answerSt, questionSt);
+    setQuestionSt("");
+    setAnswerSt("");
   };
 
   const cancelEditItemHandler = () => {
@@ -31,13 +34,15 @@ const NewCard = (props) => {
               value={questionSt}
               placeholder="Question"
               onChange={questionHandleChange}
+              required
             />
             <input
               className="cardInfo"
               type="text"
               value={answerSt}
               placeholder="Answer"
-              onChange={answerHandlerChange}
+              onChange={answerHandleChange}
+              required
             />
             <div className="formButtonControl">
               <Button

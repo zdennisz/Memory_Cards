@@ -9,6 +9,7 @@
   border-radius: 4px;
   max-width: 150px;
   min-width: 60px;
+  cursor: pointer;
 }
 .xBtn {
   background-color: rgba(255, 46, 99, 1);
