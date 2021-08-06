@@ -50,7 +50,7 @@ export const CardNavigator = props => {
 
   const handleClickDeleteLast = () => {
     if (cardsSt.length > 0) {
-      let newCards = cardsSt.filter(function(e) {
+      let newCards = cardsSt.filter(function (e) {
         if (e.cardIndex !== cardsSt.length) {
           return true;
         } else {
@@ -92,7 +92,7 @@ export const CardNavigator = props => {
     if (deleteIndex > cardsSt.length || deleteIndex <= 0) {
       alert("There are no cards under that Id");
     } else {
-      let newCards = cardsSt.filter(function(e) {
+      let newCards = cardsSt.filter(function (e) {
         if (e.cardIndex.toString() !== deleteIndex.toString()) {
           return true;
         } else {
@@ -157,14 +157,15 @@ export const CardNavigator = props => {
                   placeholder="Answer"
                   onChange={answerHandleChange}
                 />
-                <div className="formButtonControl">
+                <Menu handleAddItem={handleAddItem} handleCancelEditMode={handleCancelEditMode} />
+                {/* <div className="formButtonControl">
                   <button className="addBtn" onClick={handleAddItem}>
                     <i className="fa fa-check fa-3x formIconLocation" />
                   </button>
                   <button className="xBtn" onClick={handleCancelEditMode}>
                     <i className="fa fa-times fa-3x formIconLocation" />
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
